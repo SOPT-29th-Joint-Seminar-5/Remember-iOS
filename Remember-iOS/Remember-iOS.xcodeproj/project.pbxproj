@@ -14,6 +14,14 @@
 		ED5810D3273F82D10043AC27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5810D1273F82D10043AC27 /* LaunchScreen.storyboard */; };
 		ED5810EB273F8FDF0043AC27 /* Community.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5810EA273F8FDF0043AC27 /* Community.storyboard */; };
 		ED5810EE273F8FFC0043AC27 /* CommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810ED273F8FFC0043AC27 /* CommunityVC.swift */; };
+		ED5810F0273F96920043AC27 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810EF273F96920043AC27 /* UIView+.swift */; };
+		ED5810F2273F96CB0043AC27 /* UIScreen+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810F1273F96CB0043AC27 /* UIScreen+.swift */; };
+		ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810F4273F97020043AC27 /* UIViewController+.swift */; };
+		ED5810F7273F971A0043AC27 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810F6273F971A0043AC27 /* UITextField+.swift */; };
+		ED5810F9273F973C0043AC27 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810F8273F973C0043AC27 /* Encodable+.swift */; };
+		ED5810FB273F97C20043AC27 /* ClassName+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810FA273F97C20043AC27 /* ClassName+UIViewController.swift */; };
+		ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810FD273F97FA0043AC27 /* UICollectionViewRegisterable.swift */; };
+		ED581100273F980B0043AC27 /* UITableViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810FF273F980B0043AC27 /* UITableViewRegisterable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		ED5810D4273F82D10043AC27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED5810EA273F8FDF0043AC27 /* Community.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Community.storyboard; sourceTree = "<group>"; };
 		ED5810ED273F8FFC0043AC27 /* CommunityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityVC.swift; sourceTree = "<group>"; };
+		ED5810EF273F96920043AC27 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		ED5810F1273F96CB0043AC27 /* UIScreen+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+.swift"; sourceTree = "<group>"; };
+		ED5810F4273F97020043AC27 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		ED5810F6273F971A0043AC27 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		ED5810F8273F973C0043AC27 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		ED5810FA273F97C20043AC27 /* ClassName+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassName+UIViewController.swift"; sourceTree = "<group>"; };
+		ED5810FD273F97FA0043AC27 /* UICollectionViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewRegisterable.swift; sourceTree = "<group>"; };
+		ED5810FF273F980B0043AC27 /* UITableViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewRegisterable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +72,6 @@
 				8DA145BCE7B81C9A0DACC18B /* Pods-Remember-iOS.debug.xcconfig */,
 				8CF2461BBC32D3FA0490DA95 /* Pods-Remember-iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,6 +115,7 @@
 		ED5810DB273F87C20043AC27 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ED5810FC273F97F20043AC27 /* Protocol */,
 				ED5810E4273F8C610043AC27 /* Extensions */,
 				ED5810E3273F8C5F0043AC27 /* Models */,
 				ED5810E2273F8C1E0043AC27 /* Supporting Files */,
@@ -176,8 +192,23 @@
 		ED5810E4273F8C610043AC27 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				ED5810EF273F96920043AC27 /* UIView+.swift */,
+				ED5810F1273F96CB0043AC27 /* UIScreen+.swift */,
+				ED5810F4273F97020043AC27 /* UIViewController+.swift */,
+				ED5810F6273F971A0043AC27 /* UITextField+.swift */,
+				ED5810F8273F973C0043AC27 /* Encodable+.swift */,
+				ED5810FA273F97C20043AC27 /* ClassName+UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED5810FC273F97F20043AC27 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				ED5810FD273F97FA0043AC27 /* UICollectionViewRegisterable.swift */,
+				ED5810FF273F980B0043AC27 /* UITableViewRegisterable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,9 +326,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED5810FB273F97C20043AC27 /* ClassName+UIViewController.swift in Sources */,
+				ED581100273F980B0043AC27 /* UITableViewRegisterable.swift in Sources */,
+				ED5810F0273F96920043AC27 /* UIView+.swift in Sources */,
 				ED5810EE273F8FFC0043AC27 /* CommunityVC.swift in Sources */,
+				ED5810F7273F971A0043AC27 /* UITextField+.swift in Sources */,
+				ED5810F9273F973C0043AC27 /* Encodable+.swift in Sources */,
+				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
 				ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */,
+				ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */,
 				ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */,
+				ED5810F2273F96CB0043AC27 /* UIScreen+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
