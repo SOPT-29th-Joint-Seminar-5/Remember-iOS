@@ -22,6 +22,7 @@
 		ED5810FB273F97C20043AC27 /* ClassName+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810FA273F97C20043AC27 /* ClassName+UIViewController.swift */; };
 		ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810FD273F97FA0043AC27 /* UICollectionViewRegisterable.swift */; };
 		ED581100273F980B0043AC27 /* UITableViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810FF273F980B0043AC27 /* UITableViewRegisterable.swift */; };
+		ED581103273F98F00043AC27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED581102273F98F00043AC27 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		ED5810FA273F97C20043AC27 /* ClassName+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClassName+UIViewController.swift"; sourceTree = "<group>"; };
 		ED5810FD273F97FA0043AC27 /* UICollectionViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewRegisterable.swift; sourceTree = "<group>"; };
 		ED5810FF273F980B0043AC27 /* UITableViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewRegisterable.swift; sourceTree = "<group>"; };
+		ED581102273F98F00043AC27 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		ED5810DB273F87C20043AC27 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ED581101273F98DC0043AC27 /* Base */,
 				ED5810FC273F97F20043AC27 /* Protocol */,
 				ED5810E4273F8C610043AC27 /* Extensions */,
 				ED5810E3273F8C5F0043AC27 /* Models */,
@@ -209,6 +212,14 @@
 				ED5810FF273F980B0043AC27 /* UITableViewRegisterable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		ED581101273F98DC0043AC27 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				ED581102273F98F00043AC27 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +342,7 @@
 				ED5810F0273F96920043AC27 /* UIView+.swift in Sources */,
 				ED5810EE273F8FFC0043AC27 /* CommunityVC.swift in Sources */,
 				ED5810F7273F971A0043AC27 /* UITextField+.swift in Sources */,
+				ED581103273F98F00043AC27 /* BaseViewController.swift in Sources */,
 				ED5810F9273F973C0043AC27 /* Encodable+.swift in Sources */,
 				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
 				ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */,
