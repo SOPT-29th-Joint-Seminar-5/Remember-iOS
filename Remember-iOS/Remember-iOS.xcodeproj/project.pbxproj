@@ -23,6 +23,7 @@
 		ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810FD273F97FA0043AC27 /* UICollectionViewRegisterable.swift */; };
 		ED581100273F980B0043AC27 /* UITableViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810FF273F980B0043AC27 /* UITableViewRegisterable.swift */; };
 		ED581103273F98F00043AC27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED581102273F98F00043AC27 /* BaseViewController.swift */; };
+		ED581106273F998C0043AC27 /* ColorLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED581105273F998C0043AC27 /* ColorLiteral.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		ED5810FD273F97FA0043AC27 /* UICollectionViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewRegisterable.swift; sourceTree = "<group>"; };
 		ED5810FF273F980B0043AC27 /* UITableViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewRegisterable.swift; sourceTree = "<group>"; };
 		ED581102273F98F00043AC27 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ED581105273F998C0043AC27 /* ColorLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiteral.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		ED5810DB273F87C20043AC27 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				ED581104273F997A0043AC27 /* Literals */,
 				ED581101273F98DC0043AC27 /* Base */,
 				ED5810FC273F97F20043AC27 /* Protocol */,
 				ED5810E4273F8C610043AC27 /* Extensions */,
@@ -220,6 +223,14 @@
 				ED581102273F98F00043AC27 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		ED581104273F997A0043AC27 /* Literals */ = {
+			isa = PBXGroup;
+			children = (
+				ED581105273F998C0043AC27 /* ColorLiteral.swift */,
+			);
+			path = Literals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 				ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */,
 				ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */,
 				ED5810F2273F96CB0043AC27 /* UIScreen+.swift in Sources */,
+				ED581106273F998C0043AC27 /* ColorLiteral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
