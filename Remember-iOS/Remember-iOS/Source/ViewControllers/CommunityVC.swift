@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CommunityVC: UIViewController {
+class CommunityVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
