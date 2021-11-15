@@ -154,7 +154,6 @@
 			children = (
 				ED5810D1273F82D10043AC27 /* LaunchScreen.storyboard */,
 				ED5810EA273F8FDF0043AC27 /* Community.storyboard */,
-				7744C5592741861000325814 /* CommunityTVC.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -185,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				7744C5582741861000325814 /* CommunityTVC.swift */,
+				7744C5592741861000325814 /* CommunityTVC.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
