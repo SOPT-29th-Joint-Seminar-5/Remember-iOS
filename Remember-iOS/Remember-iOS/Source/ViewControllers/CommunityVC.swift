@@ -10,16 +10,19 @@ import UIKit
 class CommunityVC: BaseViewController {
 
     @IBOutlet weak var communityTableView: UITableView!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     
     var communityContentList: [CommunityContentData] = []
+    var categoryList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initCommunityContentList()
-        setTableView()
+        initDataList()
+        setTV()
+        setCV()
     }
     
-    func initCommunityContentList() {
+    func initDataList() {
         communityContentList.append(contentsOf: [
         CommunityContentData(titleName: "후배가 내 파트장이 된다면???", subTitleName: "회사생활", likeNumber: "564", chatNumber: "80"),
         CommunityContentData(titleName: "이직 횟수가 많으면 잘못한 건가요?", subTitleName: "이직/연봉/커리어", likeNumber: "532", chatNumber: "64"),
@@ -27,14 +30,26 @@ class CommunityVC: BaseViewController {
         CommunityContentData(titleName: "디자이너 워라밸 실화인가요?", subTitleName: "회사생활", likeNumber: "453", chatNumber: "52"),
         CommunityContentData(titleName: "이직은 어떻게 하는건가요", subTitleName: "이직/연봉/커리어", likeNumber: "422", chatNumber: "44")
         ])
+        
+        categoryList.append(contentsOf: [
+            "마케팅/PR/제휴", "IT기획/개발/디자인", "디자이너", "개발", "디자인", "마케팅/PR/제휴", "마케팅/PR/제휴"
+        ])
     }
     
-    func setTableView() {
+    func setTV() {
         let communityTableXib = UINib(nibName: CommunityTVC.className, bundle: nil)
         communityTableView.register(communityTableXib, forCellReuseIdentifier: CommunityTVC.className)
         
         communityTableView.dataSource = self
         communityTableView.delegate = self
+    }
+    
+    func setCV() {
+        let categoryXib = UINib(nibName: CategoryCVC.className, bundle: nil)
+        categoryCollectionView.register(categoryXib, forCellWithReuseIdentifier: CategoryCVC.className)
+        
+        categoryCollectionView.dataSource = self
+        categoryCollectionView.delegate = self
     }
 }
 
@@ -55,6 +70,39 @@ extension CommunityVC: UITableViewDataSource {
         cell.setCommunityData(number: indexPath.row, data: communityContentList[indexPath.row])
         return cell
     }
+}
+
+extension CommunityVC: UICollectionViewDelegate {
     
+}
+
+extension CommunityVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: categoryList[indexPath.item].size(withAttributes:
+            [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12)]).width + 8, height: 24)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+}
+
+extension CommunityVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categoryList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCVC.className, for: indexPath) as? CategoryCVC else { return UICollectionViewCell() }
+        cell.setCategoryData(categoryData: categoryList[indexPath.row])
+        return cell
+    }
 }

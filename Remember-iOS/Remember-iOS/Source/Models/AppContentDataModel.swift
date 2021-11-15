@@ -15,3 +15,7 @@ struct CommunityContentData {
     let likeNumber: String
     let chatNumber: String
 }
+
+struct CategoryData {
+    let categoryTitle: String
+}
