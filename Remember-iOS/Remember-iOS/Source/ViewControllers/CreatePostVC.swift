@@ -82,7 +82,7 @@ class CreatePostVC: BaseViewController {
             $0.snp.makeConstraints {
                 $0.top.equalTo(self.titleTextField.snp.bottom)
                 $0.leading.trailing.equalTo(self.categoryButton)
-                $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(46)
+                $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(50)
             }
         }
     }
