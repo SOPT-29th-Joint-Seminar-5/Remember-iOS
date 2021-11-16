@@ -18,6 +18,23 @@ class CreatePostVC: BaseViewController {
     @IBOutlet weak var imageButton: UIBarButtonItem!
     @IBOutlet weak var nicknameButton: UIBarButtonItem!
     
+    // MARK: - Lazy UI
+    
+    private lazy var titleTextField = UITextField().then {
+        self.setCategoryButtonContentInsets(0.38)
+        $0.placeholder = "제목을 입력하세요"
+        $0.font = .systemFont(ofSize: 18, weight: .semibold)
+        $0.borderStyle = .none
+        $0.delegate = self
+    }
+    private lazy var contentTextView = UITextView().then {
+        $0.text = placeholder
+        $0.font = .systemFont(ofSize: 16)
+        $0.textColor = .gray2
+        $0.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 46, right: 0)
+        $0.delegate = self
+    }
+    
     // MARK: - UI
 
     private let categoryButton = UIButton().then {
@@ -30,17 +47,14 @@ class CreatePostVC: BaseViewController {
         $0.backgroundColor = .gray1
         $0.addTarget(self, action: #selector(didTappedCategory), for: .touchUpInside)
     }
-    private let titleTextField = UITextField().then {
-        $0.placeholder = "제목을 입력하세요"
-        $0.font = .systemFont(ofSize: 18, weight: .semibold)
-        $0.borderStyle = .none
-    }
-    private let contentTextView = UITextView()
     
     // MARK: - Private Properties
     
     private let placeholder = "내용을 입력하세요"
-    private var didRegister = false
+    private var didRegisterNickname = false
+    private var canRegister = false {
+        didSet { changeRegisterState() }
+    }
     
     // MARK: - View Life Cycle
     
@@ -66,7 +80,6 @@ class CreatePostVC: BaseViewController {
                 $0.height.equalTo(40)
             }
         }
-        
         view.add(titleTextField) {
             $0.snp.makeConstraints {
                 $0.top.equalTo(self.categoryButton.snp.bottom)
@@ -74,7 +87,6 @@ class CreatePostVC: BaseViewController {
                 $0.height.equalTo(50)
             }
         }
-        
         view.add(contentTextView) {
             $0.snp.makeConstraints {
                 $0.top.equalTo(self.titleTextField.snp.bottom)
@@ -85,13 +97,6 @@ class CreatePostVC: BaseViewController {
     }
     
     override func configUI() {
-        setCategoryButtonContentInsets(0.38)
-        
-        contentTextView.text = placeholder
-        contentTextView.font = .systemFont(ofSize: 16)
-        contentTextView.textColor = .gray2
-        contentTextView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 46, right: 0)
-        
         imageButton.image = ImageLiterals.btnPhoto.withRenderingMode(.alwaysOriginal)
         nicknameButton.image = ImageLiterals.nicknameregisterInactive.withRenderingMode(.alwaysOriginal)
     }
@@ -123,8 +128,8 @@ class CreatePostVC: BaseViewController {
     }
     
     @IBAction func didTappedNickname(_ sender: Any) {
-        didRegister.toggle()
-        nicknameButton.image = didRegister ? ImageLiterals.nicknameregisterActive.withRenderingMode(.alwaysOriginal) : ImageLiterals.nicknameregisterInactive.withRenderingMode(.alwaysOriginal)
+        didRegisterNickname.toggle()
+        nicknameButton.image = didRegisterNickname ? ImageLiterals.nicknameregisterActive.withRenderingMode(.alwaysOriginal) : ImageLiterals.nicknameregisterInactive.withRenderingMode(.alwaysOriginal)
     }
     
     // MARK: - Selector
@@ -163,5 +168,21 @@ extension CreatePostVC {
         let width = (UIScreen.main.bounds.size.width - 32) * ratio
         self.categoryButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: width)
         self.categoryButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: width, bottom: 0, right: 0)
+    }
+    
+    private func changeRegisterState() {
+        registerButton.isEnabled = canRegister
+    }
+}
+
+extension CreatePostVC: UITextFieldDelegate, UITextViewDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let condition = textField.hasText && contentTextView.hasText && contentTextView.text != placeholder
+        canRegister = condition ? true : false
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        let condition = titleTextField.hasText && textView.hasText && textView.text != placeholder
+        canRegister = condition ? true : false
     }
 }
