@@ -10,7 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
-class CreatePostVC: BaseViewController {
+private extension CGFloat {
+    static var keyboardHeight: CGFloat = 0.0
+}
+
+final class CreatePostVC: BaseViewController {
     
     // MARK: - @IBOutlet
     
@@ -50,6 +54,7 @@ class CreatePostVC: BaseViewController {
     
     // MARK: - Private Properties
     
+    private var textBottomConstraint: NSLayoutConstraint!
     private let placeholder = "내용을 입력하세요"
     private var didRegisterNickname = false
     private var canRegister = false {
@@ -61,6 +66,7 @@ class CreatePostVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        setupNotificationCenter()
     }
     
     // MARK: - Override Methods
@@ -93,6 +99,8 @@ class CreatePostVC: BaseViewController {
                 $0.leading.trailing.equalTo(self.categoryButton)
                 $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(50)
             }
+            self.textBottomConstraint = $0.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50)
+            self.textBottomConstraint.isActive = true
         }
     }
     
@@ -111,6 +119,10 @@ class CreatePostVC: BaseViewController {
         appearance.titleTextAttributes = [.font: UIFont.systemFont(ofSize: 18.0, weight: .semibold)]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.topItem?.title = "게시글 쓰기"
+    }
+    
+    private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     // MARK: - @IBAction
@@ -133,6 +145,15 @@ class CreatePostVC: BaseViewController {
     }
     
     // MARK: - Selector
+    
+    @objc
+    private func keyboardWillShow(_ notification:NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            CGFloat.keyboardHeight = keyboardHeight
+        }
+    }
     
     @objc
     private func didTappedCategory() {
@@ -159,7 +180,6 @@ class CreatePostVC: BaseViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-    
 }
 
 // MARK: - Helper
@@ -175,6 +195,7 @@ extension CreatePostVC {
     }
 }
 
+// MARK: - UITextField, UITextView Delegate
 extension CreatePostVC: UITextFieldDelegate, UITextViewDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         let condition = textField.hasText && contentTextView.hasText && contentTextView.text != placeholder
@@ -184,5 +205,13 @@ extension CreatePostVC: UITextFieldDelegate, UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         let condition = titleTextField.hasText && textView.hasText && textView.text != placeholder
         canRegister = condition ? true : false
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.textBottomConstraint.constant = -.keyboardHeight + 44
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        self.textBottomConstraint.constant = -50
     }
 }
