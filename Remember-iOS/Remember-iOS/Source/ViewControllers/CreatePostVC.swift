@@ -43,6 +43,7 @@ class CreatePostVC: BaseViewController {
     // MARK: - Private Properties
     
     private let placeholder = "내용을 입력하세요"
+    private var didRegister = false
     
     // MARK: - View Life Cycle
     
@@ -123,7 +124,8 @@ class CreatePostVC: BaseViewController {
     }
     
     @IBAction func didTappedNickname(_ sender: Any) {
-        print("tapped Nickname...")
+        didRegister.toggle()
+        nicknameButton.image = didRegister ? ImageLiterals.nicknameregisterActive.withRenderingMode(.alwaysOriginal) : ImageLiterals.nicknameregisterInactive.withRenderingMode(.alwaysOriginal)
     }
     
     // MARK: - Selector
