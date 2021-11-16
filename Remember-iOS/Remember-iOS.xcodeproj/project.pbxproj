@@ -32,6 +32,7 @@
 		EDE45B9E27436BF4007DB91E /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45B9C27436BF4007DB91E /* CommentTVC.swift */; };
 		EDE45B9F27436BF4007DB91E /* CommentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45B9D27436BF4007DB91E /* CommentTVC.xib */; };
 		EDE45BA127436C91007DB91E /* DetailPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA027436C91007DB91E /* DetailPostVC.swift */; };
+		EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA2274374B5007DB91E /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		EDE45B9C27436BF4007DB91E /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
 		EDE45B9D27436BF4007DB91E /* CommentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTVC.xib; sourceTree = "<group>"; };
 		EDE45BA027436C91007DB91E /* DetailPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostVC.swift; sourceTree = "<group>"; };
+		EDE45BA2274374B5007DB91E /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		ED5810E0273F8C0D0043AC27 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				EDE45BA2274374B5007DB91E /* NavigationBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
 				ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */,
 				EDE45BA127436C91007DB91E /* DetailPostVC.swift in Sources */,
+				EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */,
 				ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */,
 				ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */,
 				ED5810F2273F96CB0043AC27 /* UIScreen+.swift in Sources */,

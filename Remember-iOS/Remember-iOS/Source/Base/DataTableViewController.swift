@@ -21,11 +21,7 @@ class DataTableViewController: UITableViewController {
     private var commentLists: [String] = [""]
     
     // MARK: - Initializers
-    
-    override init(style: UITableView.Style) {
-        super.init(style: .grouped)
-    }
-    
+
     required init?(coder: NSCoder) {
         super.init(style: .grouped)
     }
@@ -34,8 +30,20 @@ class DataTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+    }
+    
+    // MARK: - Setup Methods
+    
+    private func setupTableView() {
+        setupStatusBar(.white)
+        tableView.backgroundColor = .white
         ContentTVC.register(target: tableView)
         CommentTVC.register(target: tableView)
+        
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
     }
 
     // MARK: - Table view data source
