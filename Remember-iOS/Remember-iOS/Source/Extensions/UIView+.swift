@@ -18,4 +18,11 @@ extension UIView {
     func addSubviews(_ views: [UIView]) {
         views.forEach { self.addSubview($0) }
     }
+    
+    @discardableResult
+    func add<T: UIView>(_ subview: T, then closure: ((T) -> Void)? = nil) -> T {
+        addSubview(subview)
+        closure?(subview)
+        return subview
+    }
 }
