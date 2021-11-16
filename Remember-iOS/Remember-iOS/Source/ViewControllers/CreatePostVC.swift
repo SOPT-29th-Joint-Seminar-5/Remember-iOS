@@ -214,9 +214,19 @@ extension CreatePostVC: UITextFieldDelegate, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         self.textBottomConstraint.constant = -.keyboardHeight + 44
+        
+        if textView.text == placeholder {
+            textView.text.removeAll()
+            textView.textColor = .black
+        }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         self.textBottomConstraint.constant = -50
+        
+        if !textView.hasText || textView.text == placeholder {
+            textView.text = placeholder
+            textView.textColor = .gray2
+        }
     }
 }
