@@ -16,9 +16,9 @@ class DataTableViewController: UITableViewController {
         case comment
     }
     
-    // MARK: - Private Properties
+    // MARK: - Manager
     
-    private var commentLists: [String] = [""]
+    private let manager = PostManager.shared
     
     // MARK: - Initializers
 
@@ -59,7 +59,7 @@ class DataTableViewController: UITableViewController {
         
         switch section {
         case .content: return 1
-        case .comment: return commentLists.count
+        case .comment: return manager.getComment(index: 0).count
         }
     }
 
@@ -72,6 +72,7 @@ class DataTableViewController: UITableViewController {
             return cell
         case .comment:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTVC.className, for: indexPath) as? CommentTVC else { return UITableViewCell() }
+            cell.setupData(nickname: manager.getComment(index: 0)[indexPath.row].nickname, content: manager.getComment(index: 0)[indexPath.row].content)
             return cell
         }
     }
@@ -83,12 +84,19 @@ class DataTableViewController: UITableViewController {
         case .content:
             return 408
         case .comment:
-            return 40
+            return UITableView.automaticDimension
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
+        guard let section = Section.init(rawValue: section) else { return 0 }
+        
+        switch section {
+        case .content:
+            return 0
+        case .comment:
+            return 48
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -96,7 +104,14 @@ class DataTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
+        guard let section = Section.init(rawValue: section) else { return UIView() }
+        
+        switch section {
+        case .content:
+            return UIView()
+        case .comment:
+            return CommentHeader(count: manager.getComment(index: 0).count)
+        }
     }
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

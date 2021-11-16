@@ -38,6 +38,7 @@
 		EDE45BAA27438A2E007DB91E /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA927438A2E007DB91E /* UILabel+.swift */; };
 		EDE45BAD27438BB9007DB91E /* TypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BAB27438BB9007DB91E /* TypeCVC.swift */; };
 		EDE45BAE27438BB9007DB91E /* TypeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45BAC27438BB9007DB91E /* TypeCVC.xib */; };
+		EDE45BB12743919C007DB91E /* CommentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BB02743919C007DB91E /* CommentHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		EDE45BA927438A2E007DB91E /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		EDE45BAB27438BB9007DB91E /* TypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCVC.swift; sourceTree = "<group>"; };
 		EDE45BAC27438BB9007DB91E /* TypeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCVC.xib; sourceTree = "<group>"; };
+		EDE45BB02743919C007DB91E /* CommentHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				EDE45BA2274374B5007DB91E /* NavigationBar.swift */,
+				EDE45BB02743919C007DB91E /* CommentHeader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				EDE45BA8274384DF007DB91E /* PostManager.swift in Sources */,
 				ED5810F2273F96CB0043AC27 /* UIScreen+.swift in Sources */,
 				EDE45BAD27438BB9007DB91E /* TypeCVC.swift in Sources */,
+				EDE45BB12743919C007DB91E /* CommentHeader.swift in Sources */,
 				ED581106273F998C0043AC27 /* ColorLiteral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
