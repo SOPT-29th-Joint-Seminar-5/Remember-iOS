@@ -36,6 +36,11 @@ class CreatePostVC: BaseViewController {
         $0.font = .systemFont(ofSize: 18, weight: .semibold)
         $0.borderStyle = .none
     }
+    private let contentTextView = UITextView()
+    
+    // MARK: - Private Properties
+    
+    private let placeholder = "내용을 입력하세요"
     
     // MARK: - View Life Cycle
     
@@ -65,14 +70,24 @@ class CreatePostVC: BaseViewController {
         view.add(titleTextField) {
             $0.snp.makeConstraints {
                 $0.top.equalTo(self.categoryButton.snp.bottom)
-                $0.leading.trailing.equalToSuperview().inset(16)
+                $0.leading.trailing.equalTo(self.categoryButton)
                 $0.height.equalTo(50)
+            }
+        }
+        
+        view.add(contentTextView) {
+            $0.snp.makeConstraints {
+                $0.top.equalTo(self.titleTextField.snp.bottom).offset(30)
+                $0.leading.trailing.equalTo(self.categoryButton)
+                $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(46)
             }
         }
     }
     
     override func configUI() {
-        
+        contentTextView.text = placeholder
+        contentTextView.font = .systemFont(ofSize: 16)
+        contentTextView.textColor = .gray2
     }
     
     // MARK: - Setup Methods
