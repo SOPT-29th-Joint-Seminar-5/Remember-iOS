@@ -20,7 +20,7 @@ class DetailPostVC: DataTableViewController {
     
     private var commentSection: CommentSection?
     
-    // MARK: - Properties
+    // MARK: - Private Properties
     
     private let placeholder = "닉네임님 생각은 어떠세요?"
     
@@ -34,6 +34,18 @@ class DetailPostVC: DataTableViewController {
     }
     
     // MARK: - Setup Methods
+    
+    private func setupTextView() {
+        commentSection = Bundle.main.loadNibNamed("CommentSection", owner: self, options: nil)?.first as? CommentSection
+        
+        commentSection?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 132)
+        commentSection?.makeShadow(.gray2, 0.2, CGSize(width: 0, height: -5), 3)
+        
+        commentSection?.commentTextView.delegate = self
+        commentSection?.commentTextView.font = .systemFont(ofSize: 16)
+        commentSection?.commentTextView.text = placeholder
+        commentSection?.commentTextView.textColor = .gray2
+    }
     
     private func render() {
         view.add(navigationBar) {
@@ -54,19 +66,9 @@ class DetailPostVC: DataTableViewController {
             }
         }
     }
-    
-    private func setupTextView() {
-        commentSection = Bundle.main.loadNibNamed("CommentSection", owner: self, options: nil)?.first as? CommentSection
-        commentSection?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 132)
-        commentSection?.makeShadow(.gray2, 0.2, CGSize(width: 0, height: -5), 3)
-        
-        commentSection?.commentTextView.delegate = self
-        commentSection?.commentTextView.font = .systemFont(ofSize: 16)
-        commentSection?.commentTextView.text = placeholder
-        commentSection?.commentTextView.textColor = .gray2
-    }
 }
 
+// MARK: - UITextViewDelegate
 extension DetailPostVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == placeholder {
