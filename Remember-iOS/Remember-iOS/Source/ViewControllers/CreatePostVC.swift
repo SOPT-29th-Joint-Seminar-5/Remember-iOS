@@ -15,6 +15,8 @@ class CreatePostVC: BaseViewController {
     // MARK: - @IBOutlet
     
     @IBOutlet weak var registerButton: UIBarButtonItem!
+    @IBOutlet weak var imageButton: UIBarButtonItem!
+    @IBOutlet weak var nicknameButton: UIBarButtonItem!
     
     // MARK: - UI
 
@@ -89,6 +91,9 @@ class CreatePostVC: BaseViewController {
         contentTextView.font = .systemFont(ofSize: 16)
         contentTextView.textColor = .gray2
         contentTextView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 46, right: 0)
+        
+        imageButton.image = ImageLiterals.btnPhoto.withRenderingMode(.alwaysOriginal)
+        nicknameButton.image = ImageLiterals.nicknameregisterInactive.withRenderingMode(.alwaysOriginal)
     }
     
     // MARK: - Setup Methods
@@ -109,6 +114,14 @@ class CreatePostVC: BaseViewController {
         print("tapped Register...")
     }
  
+    @IBAction func didTappedImage(_ sender: Any) {
+        print("tapped Image...")
+    }
+    
+    @IBAction func didTappedNickname(_ sender: Any) {
+        print("tapped Nickname...")
+    }
+    
     // MARK: - Selector
     
     @objc
