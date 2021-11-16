@@ -31,6 +31,11 @@ class CreatePostVC: BaseViewController {
         $0.backgroundColor = .gray1
         $0.addTarget(self, action: #selector(didTappedCategory), for: .touchUpInside)
     }
+    private let titleTextField = UITextField().then {
+        $0.placeholder = "제목을 입력하세요"
+        $0.font = .systemFont(ofSize: 18, weight: .semibold)
+        $0.borderStyle = .none
+    }
     
     // MARK: - View Life Cycle
     
@@ -41,6 +46,13 @@ class CreatePostVC: BaseViewController {
     
     // MARK: - Override Methods
     
+    override func viewDidLayoutSubviews() {
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0, y: titleTextField.frame.size.height-3, width: titleTextField.frame.width, height: 1)
+        bottomBorder.backgroundColor = UIColor.gray2.cgColor
+        titleTextField.layer.addSublayer((bottomBorder))
+    }
+    
     override func render() {
         view.add(categoryButton) {
             $0.snp.makeConstraints {
@@ -49,6 +61,18 @@ class CreatePostVC: BaseViewController {
                 $0.height.equalTo(40)
             }
         }
+        
+        view.add(titleTextField) {
+            $0.snp.makeConstraints {
+                $0.top.equalTo(self.categoryButton.snp.bottom)
+                $0.leading.trailing.equalToSuperview().inset(16)
+                $0.height.equalTo(50)
+            }
+        }
+    }
+    
+    override func configUI() {
+        
     }
     
     // MARK: - Setup Methods
