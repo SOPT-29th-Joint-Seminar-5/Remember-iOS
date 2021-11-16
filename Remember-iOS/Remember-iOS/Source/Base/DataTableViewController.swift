@@ -36,11 +36,11 @@ class DataTableViewController: UITableViewController {
     // MARK: - Setup Methods
     
     private func setupTableView() {
-        setupStatusBar(.white)
-        tableView.backgroundColor = .white
         ContentTVC.register(target: tableView)
         CommentTVC.register(target: tableView)
         
+        setupStatusBar(.white)
+        tableView.backgroundColor = .white
         tableView.contentInset = UIEdgeInsets(top: 48, left: 0, bottom: 0, right: 0)
         
         if #available(iOS 15.0, *) {
@@ -73,6 +73,17 @@ class DataTableViewController: UITableViewController {
         case .comment:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTVC.className, for: indexPath) as? CommentTVC else { return UITableViewCell() }
             return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let section = Section.init(rawValue: indexPath.section) else { return 0 }
+        
+        switch section {
+        case .content:
+            return 408
+        case .comment:
+            return 40
         }
     }
     
