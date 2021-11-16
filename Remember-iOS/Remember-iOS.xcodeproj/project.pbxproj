@@ -27,6 +27,10 @@
 		ED581108273F9A8C0043AC27 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED581107273F9A8C0043AC27 /* ImageLiteral.swift */; };
 		ED58110B273FA1970043AC27 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58110A273FA1970043AC27 /* CreatePostVC.swift */; };
 		EDE45B9727436758007DB91E /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45B9627436758007DB91E /* DataTableViewController.swift */; };
+		EDE45B9A27436A65007DB91E /* ContentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45B9827436A65007DB91E /* ContentTVC.swift */; };
+		EDE45B9B27436A65007DB91E /* ContentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45B9927436A65007DB91E /* ContentTVC.xib */; };
+		EDE45B9E27436BF4007DB91E /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45B9C27436BF4007DB91E /* CommentTVC.swift */; };
+		EDE45B9F27436BF4007DB91E /* CommentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45B9D27436BF4007DB91E /* CommentTVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		ED581107273F9A8C0043AC27 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		ED58110A273FA1970043AC27 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
 		EDE45B9627436758007DB91E /* DataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
+		EDE45B9827436A65007DB91E /* ContentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTVC.swift; sourceTree = "<group>"; };
+		EDE45B9927436A65007DB91E /* ContentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTVC.xib; sourceTree = "<group>"; };
+		EDE45B9C27436BF4007DB91E /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
+		EDE45B9D27436BF4007DB91E /* CommentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,8 @@
 		ED5810DE273F8BF00043AC27 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
+				EDE45B9D27436BF4007DB91E /* CommentTVC.xib */,
+				EDE45B9927436A65007DB91E /* ContentTVC.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -182,6 +192,8 @@
 		ED5810E1273F8C1B0043AC27 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EDE45B9827436A65007DB91E /* ContentTVC.swift */,
+				EDE45B9C27436BF4007DB91E /* CommentTVC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -303,8 +315,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED5810EB273F8FDF0043AC27 /* Community.storyboard in Resources */,
+				EDE45B9F27436BF4007DB91E /* CommentTVC.xib in Resources */,
 				ED5810D3273F82D10043AC27 /* LaunchScreen.storyboard in Resources */,
 				ED5810D0273F82D10043AC27 /* Assets.xcassets in Resources */,
+				EDE45B9B27436A65007DB91E /* ContentTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,12 +374,14 @@
 				ED5810FB273F97C20043AC27 /* ClassName+UIViewController.swift in Sources */,
 				ED581100273F980B0043AC27 /* UITableViewRegisterable.swift in Sources */,
 				ED5810F0273F96920043AC27 /* UIView+.swift in Sources */,
+				EDE45B9E27436BF4007DB91E /* CommentTVC.swift in Sources */,
 				ED581108273F9A8C0043AC27 /* ImageLiteral.swift in Sources */,
 				ED5810EE273F8FFC0043AC27 /* CommunityVC.swift in Sources */,
 				ED58110B273FA1970043AC27 /* CreatePostVC.swift in Sources */,
 				ED5810F7273F971A0043AC27 /* UITextField+.swift in Sources */,
 				ED581103273F98F00043AC27 /* BaseViewController.swift in Sources */,
 				ED5810F9273F973C0043AC27 /* Encodable+.swift in Sources */,
+				EDE45B9A27436A65007DB91E /* ContentTVC.swift in Sources */,
 				EDE45B9727436758007DB91E /* DataTableViewController.swift in Sources */,
 				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
 				ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */,
