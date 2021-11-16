@@ -110,6 +110,10 @@ class CreatePostVC: BaseViewController {
     
     // MARK: - @IBAction
     
+    @IBAction func didTappedCancel(_ sender: Any) {
+        print("tapped cancel...")
+    }
+    
     @IBAction func didTappedRegister(_ sender: Any) {
         print("tapped Register...")
     }

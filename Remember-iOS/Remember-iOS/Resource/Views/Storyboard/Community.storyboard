@@ -40,7 +40,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5jS-GU-mGD"/>
-                                    <barButtonItem image="nicknameregister_inactive" style="plain" id="1Kd-Pv-hsK">
+                                    <barButtonItem style="plain" id="1Kd-Pv-hsK">
                                         <connections>
                                             <action selector="didTappedNickname:" destination="8Uj-Vc-pn1" id="OLG-yf-Qdw"/>
                                         </connections>
@@ -59,6 +59,9 @@
                     <navigationItem key="navigationItem" id="Lkx-Ok-FR9">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="2Hf-lo-bbv">
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="didTappedCancel:" destination="8Uj-Vc-pn1" id="UKU-gp-CQf"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="등록" id="MDO-O9-zT4">
                             <color key="tintColor" systemColor="systemGray3Color"/>
@@ -97,7 +100,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="nicknameregister_inactive" width="149" height="48"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
