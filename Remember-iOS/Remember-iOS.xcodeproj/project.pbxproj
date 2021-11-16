@@ -39,6 +39,8 @@
 		EDE45BAD27438BB9007DB91E /* TypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BAB27438BB9007DB91E /* TypeCVC.swift */; };
 		EDE45BAE27438BB9007DB91E /* TypeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45BAC27438BB9007DB91E /* TypeCVC.xib */; };
 		EDE45BB12743919C007DB91E /* CommentHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BB02743919C007DB91E /* CommentHeader.swift */; };
+		EDE45BB52743AA1F007DB91E /* CommentSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BB42743AA1F007DB91E /* CommentSection.swift */; };
+		EDE45BB72743AA31007DB91E /* CommentSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45BB62743AA31007DB91E /* CommentSection.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		EDE45BAB27438BB9007DB91E /* TypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCVC.swift; sourceTree = "<group>"; };
 		EDE45BAC27438BB9007DB91E /* TypeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCVC.xib; sourceTree = "<group>"; };
 		EDE45BB02743919C007DB91E /* CommentHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentHeader.swift; sourceTree = "<group>"; };
+		EDE45BB42743AA1F007DB91E /* CommentSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSection.swift; sourceTree = "<group>"; };
+		EDE45BB62743AA31007DB91E /* CommentSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentSection.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +191,7 @@
 				EDE45B9D27436BF4007DB91E /* CommentTVC.xib */,
 				EDE45B9927436A65007DB91E /* ContentTVC.xib */,
 				EDE45BAC27438BB9007DB91E /* TypeCVC.xib */,
+				EDE45BB62743AA31007DB91E /* CommentSection.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			children = (
 				EDE45BA2274374B5007DB91E /* NavigationBar.swift */,
 				EDE45BB02743919C007DB91E /* CommentHeader.swift */,
+				EDE45BB42743AA1F007DB91E /* CommentSection.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				ED5810D3273F82D10043AC27 /* LaunchScreen.storyboard in Resources */,
 				ED5810D0273F82D10043AC27 /* Assets.xcassets in Resources */,
 				EDE45BAE27438BB9007DB91E /* TypeCVC.xib in Resources */,
+				EDE45BB72743AA31007DB91E /* CommentSection.xib in Resources */,
 				EDE45B9B27436A65007DB91E /* ContentTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,6 +428,7 @@
 				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
 				ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */,
 				EDE45BA127436C91007DB91E /* DetailPostVC.swift in Sources */,
+				EDE45BB52743AA1F007DB91E /* CommentSection.swift in Sources */,
 				EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */,
 				ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */,
 				ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */,
