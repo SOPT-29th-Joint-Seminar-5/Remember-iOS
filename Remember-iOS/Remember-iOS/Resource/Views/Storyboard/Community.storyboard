@@ -30,8 +30,21 @@
                     <view key="view" contentMode="scaleToFill" id="eog-6U-qvn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fJ-eB-xPG">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Item" id="scc-zV-0gY"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ltv-S1-oNi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5fJ-eB-xPG" firstAttribute="leading" secondItem="ltv-S1-oNi" secondAttribute="leading" id="6Bh-sN-xNk"/>
+                            <constraint firstItem="5fJ-eB-xPG" firstAttribute="trailing" secondItem="ltv-S1-oNi" secondAttribute="trailing" id="An3-xi-vMV"/>
+                            <constraint firstItem="ltv-S1-oNi" firstAttribute="bottom" secondItem="5fJ-eB-xPG" secondAttribute="bottom" id="EBe-MR-brw"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lkx-Ok-FR9">
                         <barButtonItem key="leftBarButtonItem" title="취소" id="2Hf-lo-bbv">

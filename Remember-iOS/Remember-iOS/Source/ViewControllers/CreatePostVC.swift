@@ -77,7 +77,7 @@ class CreatePostVC: BaseViewController {
         
         view.add(contentTextView) {
             $0.snp.makeConstraints {
-                $0.top.equalTo(self.titleTextField.snp.bottom).offset(30)
+                $0.top.equalTo(self.titleTextField.snp.bottom)
                 $0.leading.trailing.equalTo(self.categoryButton)
                 $0.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(46)
             }
@@ -88,6 +88,7 @@ class CreatePostVC: BaseViewController {
         contentTextView.text = placeholder
         contentTextView.font = .systemFont(ofSize: 16)
         contentTextView.textColor = .gray2
+        contentTextView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 46, right: 0)
     }
     
     // MARK: - Setup Methods
