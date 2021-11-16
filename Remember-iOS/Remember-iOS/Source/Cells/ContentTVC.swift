@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ContentTVC: UITableViewCell {
+class ContentTVC: UITableViewCell, UITableViewRegisterable {
+    static var isFromNib: Bool {
+        get { return true }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

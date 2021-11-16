@@ -7,7 +7,10 @@
 
 import UIKit
 
-class CommentTVC: UITableViewCell {
+class CommentTVC: UITableViewCell, UITableViewRegisterable {
+    static var isFromNib: Bool {
+        get { return true }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

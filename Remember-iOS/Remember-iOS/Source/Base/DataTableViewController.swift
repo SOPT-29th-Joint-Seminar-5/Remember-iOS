@@ -18,7 +18,7 @@ class DataTableViewController: UITableViewController {
     
     // MARK: - Private Properties
     
-    private var commentLists: [String] = []
+    private var commentLists: [String] = [""]
     
     // MARK: - Initializers
     
@@ -27,13 +27,15 @@ class DataTableViewController: UITableViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(style: .grouped)
     }
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ContentTVC.register(target: tableView)
+        CommentTVC.register(target: tableView)
     }
 
     // MARK: - Table view data source
