@@ -65,6 +65,7 @@ final class CreatePostVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         setupNavigationBar()
         setupNotificationCenter()
     }
@@ -200,6 +201,10 @@ extension CreatePostVC: UITextFieldDelegate, UITextViewDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         let condition = textField.hasText && contentTextView.hasText && contentTextView.text != placeholder
         canRegister = condition ? true : false
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        contentTextView.becomeFirstResponder()
     }
     
     func textViewDidChange(_ textView: UITextView) {
