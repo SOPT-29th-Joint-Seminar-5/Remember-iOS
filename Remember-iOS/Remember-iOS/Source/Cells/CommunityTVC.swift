@@ -9,16 +9,22 @@ import UIKit
 
 class CommunityTVC: UITableViewCell {
 
+    // MARK: - UI Component Part
+    
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var chatCountLabel: UILabel!
     
+    // MARK: - Life Cycle Part
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
+    // MARK: - Custom Method Part
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

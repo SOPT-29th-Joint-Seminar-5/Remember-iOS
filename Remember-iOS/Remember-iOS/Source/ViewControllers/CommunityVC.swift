@@ -9,11 +9,17 @@ import UIKit
 
 class CommunityVC: BaseViewController {
 
+    // MARK: - UI Component Part
+    
     @IBOutlet weak var communityTableView: UITableView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     
+    // MARK: - Vars & Lets Part
+    
     var communityContentList: [CommunityContentData] = []
     var categoryList = [String]()
+    
+    // MARK: - Life Cycle Part
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,8 @@ class CommunityVC: BaseViewController {
         setTV()
         setCV()
     }
+    
+    // MARK: - Custom Method Part
     
     func initDataList() {
         communityContentList.append(contentsOf: [
@@ -52,6 +60,8 @@ class CommunityVC: BaseViewController {
         categoryCollectionView.delegate = self
     }
 }
+
+// MARK: - Extension Part
 
 extension CommunityVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
