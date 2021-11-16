@@ -21,9 +21,6 @@ class CreatePostVC: BaseViewController {
     // MARK: - UI
 
     private let categoryButton = UIButton().then {
-        let width = (UIScreen.main.bounds.size.width - 32) * 0.38
-        $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: width)
-        $0.imageEdgeInsets = UIEdgeInsets(top: 0, left: width, bottom: 0, right: 0)
         $0.setTitle("커뮤니티를 선택해 주세요", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 16)
@@ -88,6 +85,8 @@ class CreatePostVC: BaseViewController {
     }
     
     override func configUI() {
+        setCategoryButtonContentInsets(0.38)
+        
         contentTextView.text = placeholder
         contentTextView.font = .systemFont(ofSize: 16)
         contentTextView.textColor = .gray2
@@ -132,7 +131,37 @@ class CreatePostVC: BaseViewController {
     
     @objc
     private func didTappedCategory() {
-        print("tapped Category...")
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let itBussinessType = UIAlertAction(title: "IT 기획/개발/디자인", style: .default, handler: { [unowned self] _ in
+            self.setCategoryButtonContentInsets(0.48)
+            self.categoryButton.setTitle("IT 기획/개발/디자인", for: .normal)
+        })
+        let itEngineer = UIAlertAction(title: "IT 엔지니어", style: .default, handler: { [unowned self] _ in
+            self.setCategoryButtonContentInsets(0.62)
+            self.categoryButton.setTitle("IT 엔지니어", for: .normal)
+        })
+        let AIType = UIAlertAction(title: "인공지능/빅데이터", style: .default, handler: { [unowned self] _ in
+            self.setCategoryButtonContentInsets(0.50)
+            self.categoryButton.setTitle("인공지능/빅데이터", for: .normal)
+        })
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(itBussinessType)
+        alert.addAction(itEngineer)
+        alert.addAction(AIType)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
+}
+
+// MARK: - Helper
+extension CreatePostVC {
+    private func setCategoryButtonContentInsets(_ ratio: CGFloat) {
+        let width = (UIScreen.main.bounds.size.width - 32) * ratio
+        self.categoryButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: width)
+        self.categoryButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: width, bottom: 0, right: 0)
+    }
 }
