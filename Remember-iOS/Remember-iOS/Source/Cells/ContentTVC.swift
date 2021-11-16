@@ -23,11 +23,17 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     @IBOutlet weak var viewLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
     
+    // MARK: - Manager
+    
+    private let manager = PostManager.shared
+    
     // MARK: - Initializers
     
     override func awakeFromNib() {
         super.awakeFromNib()
         configUI()
+        setupContentData()
+        setupCollectionView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -43,4 +49,71 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
         likeLabel.textColor = .gray3
     }
     
+    private func setupCollectionView() {
+        categoryCollectionView.delegate = self
+        categoryCollectionView.dataSource = self
+        TypeCVC.register(target: categoryCollectionView)
+    }
+    
+    // MARK: - Private Methods
+    
+    private func calculateCellWidth(index: Int) -> CGFloat {
+        let label = UILabel()
+        label.text = manager.getCategory(index: 0)[index]
+        label.font = .systemFont(ofSize: 14)
+        label.sizeToFit()
+        return label.frame.width + 20
+    }
+    
+    // MARK: - Public Methods
+    
+    public func setupContentData() {
+        // set dummy data
+        titleLabel.text = manager.getTitle(index: 0)
+        nicknameLabel.text = manager.getNickname(index: 0)
+        jobLabel.text = manager.getJob(index: 0)
+        timeLabel.text = manager.getTime(index: 0)
+        contentLabel.text = manager.getContents(index: 0)
+        contentLabel.addCharacterSpacing(paragraphValue: 5)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension ContentTVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return manager.getCategory(index: 0).count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCVC.className, for: indexPath) as? TypeCVC else { return UICollectionViewCell() }
+        cell.setupData(text: manager.getCategory(index: 0)[indexPath.item])
+        
+        switch indexPath.item {
+        case 0:
+            cell.typeLabel.textColor = .main1
+        default:
+            cell.typeLabel.textColor = .gray4
+        }
+        
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension ContentTVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: calculateCellWidth(index: indexPath.item), height: collectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 13
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
 }

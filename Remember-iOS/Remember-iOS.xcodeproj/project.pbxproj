@@ -34,6 +34,10 @@
 		EDE45BA127436C91007DB91E /* DetailPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA027436C91007DB91E /* DetailPostVC.swift */; };
 		EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA2274374B5007DB91E /* NavigationBar.swift */; };
 		EDE45BA52743841D007DB91E /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA42743841D007DB91E /* Content.swift */; };
+		EDE45BA8274384DF007DB91E /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA7274384DF007DB91E /* PostManager.swift */; };
+		EDE45BAA27438A2E007DB91E /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA927438A2E007DB91E /* UILabel+.swift */; };
+		EDE45BAD27438BB9007DB91E /* TypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BAB27438BB9007DB91E /* TypeCVC.swift */; };
+		EDE45BAE27438BB9007DB91E /* TypeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45BAC27438BB9007DB91E /* TypeCVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		EDE45BA027436C91007DB91E /* DetailPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostVC.swift; sourceTree = "<group>"; };
 		EDE45BA2274374B5007DB91E /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		EDE45BA42743841D007DB91E /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		EDE45BA7274384DF007DB91E /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		EDE45BA927438A2E007DB91E /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		EDE45BAB27438BB9007DB91E /* TypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCVC.swift; sourceTree = "<group>"; };
+		EDE45BAC27438BB9007DB91E /* TypeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,7 @@
 		ED5810DB273F87C20043AC27 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				EDE45BA6274384D0007DB91E /* Manager */,
 				ED581104273F997A0043AC27 /* Literals */,
 				ED581101273F98DC0043AC27 /* Base */,
 				ED5810FC273F97F20043AC27 /* Protocol */,
@@ -175,6 +184,7 @@
 			children = (
 				EDE45B9D27436BF4007DB91E /* CommentTVC.xib */,
 				EDE45B9927436A65007DB91E /* ContentTVC.xib */,
+				EDE45BAC27438BB9007DB91E /* TypeCVC.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -200,6 +210,7 @@
 		ED5810E1273F8C1B0043AC27 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				EDE45BAB27438BB9007DB91E /* TypeCVC.swift */,
 				EDE45B9827436A65007DB91E /* ContentTVC.swift */,
 				EDE45B9C27436BF4007DB91E /* CommentTVC.swift */,
 			);
@@ -232,6 +243,7 @@
 				ED5810F6273F971A0043AC27 /* UITextField+.swift */,
 				ED5810F8273F973C0043AC27 /* Encodable+.swift */,
 				ED5810FA273F97C20043AC27 /* ClassName+UIViewController.swift */,
+				EDE45BA927438A2E007DB91E /* UILabel+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,6 +273,14 @@
 				ED581107273F9A8C0043AC27 /* ImageLiteral.swift */,
 			);
 			path = Literals;
+			sourceTree = "<group>";
+		};
+		EDE45BA6274384D0007DB91E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				EDE45BA7274384DF007DB91E /* PostManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +347,7 @@
 				EDE45B9F27436BF4007DB91E /* CommentTVC.xib in Resources */,
 				ED5810D3273F82D10043AC27 /* LaunchScreen.storyboard in Resources */,
 				ED5810D0273F82D10043AC27 /* Assets.xcassets in Resources */,
+				EDE45BAE27438BB9007DB91E /* TypeCVC.xib in Resources */,
 				EDE45B9B27436A65007DB91E /* ContentTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +412,7 @@
 				ED5810F7273F971A0043AC27 /* UITextField+.swift in Sources */,
 				ED581103273F98F00043AC27 /* BaseViewController.swift in Sources */,
 				ED5810F9273F973C0043AC27 /* Encodable+.swift in Sources */,
+				EDE45BAA27438A2E007DB91E /* UILabel+.swift in Sources */,
 				EDE45B9A27436A65007DB91E /* ContentTVC.swift in Sources */,
 				EDE45B9727436758007DB91E /* DataTableViewController.swift in Sources */,
 				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
@@ -399,7 +421,9 @@
 				EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */,
 				ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */,
 				ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */,
+				EDE45BA8274384DF007DB91E /* PostManager.swift in Sources */,
 				ED5810F2273F96CB0043AC27 /* UIScreen+.swift in Sources */,
+				EDE45BAD27438BB9007DB91E /* TypeCVC.swift in Sources */,
 				ED581106273F998C0043AC27 /* ColorLiteral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
