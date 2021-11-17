@@ -236,20 +236,6 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="BuI-q2-JpD">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Nt-bX-wvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="xOh-Xm-8SQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="38g-vS-uqB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="-26" y="-4"/>
-        </scene>
     </scenes>
     <resources>
         <image name="bell" width="44" height="44.333332061767578"/>
