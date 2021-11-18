@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hXB-Rk-3fq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hXB-Rk-3fq">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -162,7 +162,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="buttonCell"/>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-TD-1zq">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cg6-TD-1zq">
                                 <rect key="frame" x="80" y="103" width="295" height="24"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G2F-Qa-rey">
@@ -219,6 +219,81 @@
             </objects>
             <point key="canvasLocation" x="1047.2" y="130.04926108374386"/>
         </scene>
+        <!--Create PostVC-->
+        <scene sceneID="V6g-1I-af1">
+            <objects>
+                <viewController storyboardIdentifier="CreatePostVC" id="8Uj-Vc-pn1" customClass="CreatePostVC" customModule="Remember_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eog-6U-qvn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fJ-eB-xPG">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <items>
+                                    <barButtonItem id="scc-zV-0gY">
+                                        <connections>
+                                            <action selector="didTappedImage:" destination="8Uj-Vc-pn1" id="HYp-aD-HkQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5jS-GU-mGD"/>
+                                    <barButtonItem style="plain" id="1Kd-Pv-hsK">
+                                        <connections>
+                                            <action selector="didTappedNickname:" destination="8Uj-Vc-pn1" id="OLG-yf-Qdw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ltv-S1-oNi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5fJ-eB-xPG" firstAttribute="leading" secondItem="ltv-S1-oNi" secondAttribute="leading" id="6Bh-sN-xNk"/>
+                            <constraint firstItem="5fJ-eB-xPG" firstAttribute="trailing" secondItem="ltv-S1-oNi" secondAttribute="trailing" id="An3-xi-vMV"/>
+                            <constraint firstItem="ltv-S1-oNi" firstAttribute="bottom" secondItem="5fJ-eB-xPG" secondAttribute="bottom" id="EBe-MR-brw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lkx-Ok-FR9">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="2Hf-lo-bbv">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="didTappedCancel:" destination="8Uj-Vc-pn1" id="UKU-gp-CQf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="등록" id="MDO-O9-zT4">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="didTappedRegister:" destination="8Uj-Vc-pn1" id="G8E-Bk-32x"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageButton" destination="scc-zV-0gY" id="HMZ-43-Fq3"/>
+                        <outlet property="nicknameButton" destination="1Kd-Pv-hsK" id="9PQ-EG-0YG"/>
+                        <outlet property="registerButton" destination="MDO-O9-zT4" id="7ui-Eq-hQ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zkh-xN-pJR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="979.01785714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7xU-yU-lbJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GcB-ae-K1M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1nn-2v-on6">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Uj-Vc-pn1" kind="relationship" relationship="rootViewController" id="Gg2-gV-jfE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9cA-Z6-4nU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="978.34821428571422"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="B5f-Gr-Bsc">
             <objects>
@@ -243,6 +318,9 @@
         <image name="img_ad" width="32.666667938232422" height="47"/>
         <image name="menu" width="44" height="44.333332061767578"/>
         <image name="zoom-out" width="44" height="44.333332061767578"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
