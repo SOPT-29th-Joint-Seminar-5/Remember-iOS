@@ -80,10 +80,6 @@ extension CommunityVC: UITableViewDataSource {
     }
 }
 
-extension CommunityVC: UICollectionViewDelegate {
-    
-}
-
 extension CommunityVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: categoryList[indexPath.item].size(withAttributes:
