@@ -30,6 +30,11 @@ public enum ImageLiterals {
     public static var nicknameregisterActive: UIImage { .load(name: "nicknameregister_active") }
     public static var nicknameregisterInactive: UIImage { .load(name: "nicknameregister_inactive") }
     public static var surfaceAd: UIImage { .load(name: "surface_ad") }
+    public static var imgAd: UIImage { .load(name: "img_ad")}
+    public static var buttonCell: UIImage { .load(name: "buttonCell")}
+    public static var menuIcon: UIImage { .load(name: "menu")}
+    public static var bellIcon: UIImage { .load(name: "bell")}
+    public static var searchIcon: UIImage { .load(name: "zoom-out")}
     
 }
 
