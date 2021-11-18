@@ -7,8 +7,16 @@
 
 import UIKit
 
-class CommunityTVC: UITableViewCell {
-
+class CommunityTVC: UITableViewCell, UITableViewRegisterable {
+    
+    // MARK: - Vars & Lets Part
+    
+    static var isFromNib: Bool {
+        get {
+            return true
+        }
+    }
+    
     // MARK: - UI Component Part
     
     @IBOutlet weak var numberLabel: UILabel!

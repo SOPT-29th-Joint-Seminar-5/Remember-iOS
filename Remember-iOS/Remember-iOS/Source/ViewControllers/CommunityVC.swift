@@ -17,15 +17,15 @@ class CommunityVC: BaseViewController {
     // MARK: - Vars & Lets Part
     
     var communityContentList: [CommunityContentData] = []
-    var categoryList = [String]()
+    var categoryList: [String] = []
     
     // MARK: - Life Cycle Part
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initDataList()
-        setTV()
-        setCV()
+        setupTV()
+        setupCV()
     }
     
     // MARK: - Custom Method Part
@@ -44,17 +44,15 @@ class CommunityVC: BaseViewController {
         ])
     }
     
-    func setTV() {
-        let communityTableXib = UINib(nibName: CommunityTVC.className, bundle: nil)
-        communityTableView.register(communityTableXib, forCellReuseIdentifier: CommunityTVC.className)
+    func setupTV() {
+        CommunityTVC.register(target: communityTableView)
         
         communityTableView.dataSource = self
         communityTableView.delegate = self
     }
     
-    func setCV() {
-        let categoryXib = UINib(nibName: CategoryCVC.className, bundle: nil)
-        categoryCollectionView.register(categoryXib, forCellWithReuseIdentifier: CategoryCVC.className)
+    func setupCV() {
+        CategoryCVC.register(target: categoryCollectionView)
         
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self

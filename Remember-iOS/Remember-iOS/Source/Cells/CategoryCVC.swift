@@ -7,8 +7,16 @@
 
 import UIKit
 
-class CategoryCVC: UICollectionViewCell {
-
+class CategoryCVC: UICollectionViewCell, UICollectionViewRegisterable {
+    
+    // MARK: - Vars & Lets Part
+    
+    static var isFromNib: Bool {
+        get {
+            return true
+        }
+    }
+    
     // MARK: - UI Component Part
     
     @IBOutlet weak var categoryLabel: UILabel!
