@@ -13,6 +13,9 @@
 		7744C55D2741942300325814 /* AppContentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C55C2741942300325814 /* AppContentDataModel.swift */; };
 		7744C56E2742414700325814 /* CategoryCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C56C2742414700325814 /* CategoryCVC.swift */; };
 		7744C56F2742414700325814 /* CategoryCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7744C56D2742414700325814 /* CategoryCVC.xib */; };
+		779015C127477E4B00F83ACD /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015C027477E4B00F83ACD /* TabBar.storyboard */; };
+		779015C327477ED000F83ACD /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015C227477ED000F83ACD /* TabBarVC.swift */; };
+		779015C52747800C00F83ACD /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015C42747800C00F83ACD /* CALayer+.swift */; };
 		ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810C6273F82D00043AC27 /* AppDelegate.swift */; };
 		ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810C8273F82D00043AC27 /* SceneDelegate.swift */; };
 		ED5810D0273F82D10043AC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5810CF273F82D10043AC27 /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		7744C55C2741942300325814 /* AppContentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentDataModel.swift; sourceTree = "<group>"; };
 		7744C56C2742414700325814 /* CategoryCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCVC.swift; sourceTree = "<group>"; };
 		7744C56D2742414700325814 /* CategoryCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCVC.xib; sourceTree = "<group>"; };
+		779015C027477E4B00F83ACD /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		779015C227477ED000F83ACD /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		779015C42747800C00F83ACD /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		8CF2461BBC32D3FA0490DA95 /* Pods-Remember-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remember-iOS.release.xcconfig"; path = "Target Support Files/Pods-Remember-iOS/Pods-Remember-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		8DA145BCE7B81C9A0DACC18B /* Pods-Remember-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remember-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Remember-iOS/Pods-Remember-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CF8216FA7164CF1BC22978 /* Pods_Remember_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remember_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +197,7 @@
 			children = (
 				ED5810D1273F82D10043AC27 /* LaunchScreen.storyboard */,
 				ED5810EA273F8FDF0043AC27 /* Community.storyboard */,
+				779015C027477E4B00F83ACD /* TabBar.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -213,6 +220,7 @@
 			children = (
 				ED5810ED273F8FFC0043AC27 /* CommunityVC.swift */,
 				ED58110A273FA1970043AC27 /* CreatePostVC.swift */,
+				779015C227477ED000F83ACD /* TabBarVC.swift */,
 				EDE45BA027436C91007DB91E /* DetailPostVC.swift */,
 			);
 			path = ViewControllers;
@@ -267,6 +275,7 @@
 				ED5810F6273F971A0043AC27 /* UITextField+.swift */,
 				ED5810F8273F973C0043AC27 /* Encodable+.swift */,
 				ED5810FA273F97C20043AC27 /* ClassName+UIViewController.swift */,
+				779015C42747800C00F83ACD /* CALayer+.swift */,
 				EDE45BA927438A2E007DB91E /* UILabel+.swift */,
 			);
 			path = Extensions;
@@ -372,6 +381,7 @@
 				EDE45B9F27436BF4007DB91E /* CommentTVC.xib in Resources */,
 				ED5810D3273F82D10043AC27 /* LaunchScreen.storyboard in Resources */,
 				ED5810D0273F82D10043AC27 /* Assets.xcassets in Resources */,
+				779015C127477E4B00F83ACD /* TabBar.storyboard in Resources */,
 				7744C55B2741861000325814 /* CommunityTVC.xib in Resources */,
 				EDE45BAE27438BB9007DB91E /* TypeCVC.xib in Resources */,
 				EDE45BB72743AA31007DB91E /* CommentSection.xib in Resources */,
@@ -439,12 +449,14 @@
 				ED5810F7273F971A0043AC27 /* UITextField+.swift in Sources */,
 				ED581103273F98F00043AC27 /* BaseViewController.swift in Sources */,
 				ED5810F9273F973C0043AC27 /* Encodable+.swift in Sources */,
+				779015C327477ED000F83ACD /* TabBarVC.swift in Sources */,
 				7744C56E2742414700325814 /* CategoryCVC.swift in Sources */,
 				EDE45BAA27438A2E007DB91E /* UILabel+.swift in Sources */,
 				EDE45B9A27436A65007DB91E /* ContentTVC.swift in Sources */,
 				EDE45B9727436758007DB91E /* DataTableViewController.swift in Sources */,
 				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
 				ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */,
+				779015C52747800C00F83ACD /* CALayer+.swift in Sources */,
 				EDE45BA127436C91007DB91E /* DetailPostVC.swift in Sources */,
 				EDE45BB52743AA1F007DB91E /* CommentSection.swift in Sources */,
 				EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */,

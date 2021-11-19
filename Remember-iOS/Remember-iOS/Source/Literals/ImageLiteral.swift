@@ -11,7 +11,7 @@ public enum ImageLiterals {
 
     public static var btnPhoto: UIImage { .load(name: "btnPhoto")}
     public static var btnShare: UIImage { .load(name: "btnShare") }
-    public static var icbtComment: UIImage { .load(name: "icbtComment") }
+    public static var icbtComment: UIImage { .load(name: "icon_messagecircle_unseleted") }
     public static var icbtCommentList: UIImage { .load(name: "icbtCommentList") }
     public static var icbtDropdown: UIImage { .load(name: "icbtDropdown") }
     public static var icbtLike: UIImage { .load(name: "icbtLike") }
@@ -35,6 +35,8 @@ public enum ImageLiterals {
     public static var menuIcon: UIImage { .load(name: "menu")}
     public static var bellIcon: UIImage { .load(name: "bell")}
     public static var searchIcon: UIImage { .load(name: "zoom-out")}
+    public static var messageSelected: UIImage { .load(name: "message-circle")}
+    public static var writeIcon: UIImage { .load(name: "icbt_write")}
     
 }
 
