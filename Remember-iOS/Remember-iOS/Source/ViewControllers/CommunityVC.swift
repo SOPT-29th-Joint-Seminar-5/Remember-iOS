@@ -65,6 +65,11 @@ extension CommunityVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 96
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailPostVC.className) as? DetailPostVC else { return }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension CommunityVC: UITableViewDataSource {
