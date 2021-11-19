@@ -129,11 +129,11 @@ final class CreatePostVC: BaseViewController {
     // MARK: - @IBAction
     
     @IBAction func didTappedCancel(_ sender: Any) {
-        print("tapped cancel...")
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didTappedRegister(_ sender: Any) {
-        print("tapped Register...")
+        dismiss(animated: true, completion: nil)
     }
  
     @IBAction func didTappedImage(_ sender: Any) {
