@@ -59,7 +59,7 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     
     private func calculateCellWidth(index: Int) -> CGFloat {
         let label = UILabel()
-        label.text = manager.getCategory(index: 0)[index]
+        label.text = manager.contents[0].category[index]
         label.font = .systemFont(ofSize: 14)
         label.sizeToFit()
         return label.frame.width + 20
@@ -69,11 +69,11 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     
     public func setupContentData() {
         // set dummy data
-        titleLabel.text = manager.getTitle(index: 0)
-        nicknameLabel.text = manager.getNickname(index: 0)
-        jobLabel.text = manager.getJob(index: 0)
-        timeLabel.text = manager.getTime(index: 0)
-        contentLabel.text = manager.getContents(index: 0)
+        titleLabel.text = manager.contents[0].title
+        nicknameLabel.text = manager.contents[0].nickname
+        jobLabel.text = manager.contents[0].job
+        timeLabel.text = manager.contents[0].time
+        contentLabel.text = manager.contents[0].content
         contentLabel.addCharacterSpacing(paragraphValue: 5)
     }
 }
@@ -81,12 +81,12 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
 // MARK: - UICollectionViewDataSource
 extension ContentTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return manager.getCategory(index: 0).count
+        return manager.contents[0].category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCVC.className, for: indexPath) as? TypeCVC else { return UICollectionViewCell() }
-        cell.setupData(text: manager.getCategory(index: 0)[indexPath.item])
+        cell.setupData(text: manager.contents[0].category[indexPath.item])
         
         switch indexPath.item {
         case 0:

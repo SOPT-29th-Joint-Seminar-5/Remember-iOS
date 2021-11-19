@@ -59,7 +59,7 @@ class DataTableViewController: UITableViewController {
         
         switch section {
         case .content: return 1
-        case .comment: return manager.getComment(index: 0).count
+        case .comment: return manager.contents[0].comment.count
         }
     }
 
@@ -72,7 +72,7 @@ class DataTableViewController: UITableViewController {
             return cell
         case .comment:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTVC.className, for: indexPath) as? CommentTVC else { return UITableViewCell() }
-            cell.setupData(nickname: manager.getComment(index: 0)[indexPath.row].nickname, content: manager.getComment(index: 0)[indexPath.row].content)
+            cell.setupData(nickname: manager.contents[0].comment[0].nickname, content: manager.contents[0].comment[0].content)
             return cell
         }
     }
@@ -110,7 +110,7 @@ class DataTableViewController: UITableViewController {
         case .content:
             return UIView()
         case .comment:
-            return CommentHeader(count: manager.getComment(index: 0).count)
+            return CommentHeader(count: manager.contents[0].comment.count)
         }
     }
     

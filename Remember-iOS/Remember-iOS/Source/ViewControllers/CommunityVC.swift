@@ -16,8 +16,11 @@ class CommunityVC: BaseViewController {
     
     // MARK: - Vars & Lets Part
     
-    var communityContentList: [CommunityContentData] = []
     var categoryList: [String] = []
+    
+    // MARK: - Manager
+    
+    private let manager = PostManager.shared
     
     // MARK: - Life Cycle Part
     
@@ -36,16 +39,8 @@ class CommunityVC: BaseViewController {
     // MARK: - Custom Method Part
     
     func initDataList() {
-        communityContentList.append(contentsOf: [
-        CommunityContentData(titleName: "후배가 내 파트장이 된다면???", subTitleName: "회사생활", likeNumber: "564", chatNumber: "80"),
-        CommunityContentData(titleName: "이직 횟수가 많으면 잘못한 건가요?", subTitleName: "이직/연봉/커리어", likeNumber: "532", chatNumber: "64"),
-        CommunityContentData(titleName: "올해 한국주식 투자하신분들 이익보셨나요?", subTitleName: "경제/제태크", likeNumber: "488", chatNumber: "58"),
-        CommunityContentData(titleName: "디자이너 워라밸 실화인가요?", subTitleName: "회사생활", likeNumber: "453", chatNumber: "52"),
-        CommunityContentData(titleName: "이직은 어떻게 하는건가요", subTitleName: "이직/연봉/커리어", likeNumber: "422", chatNumber: "44")
-        ])
-        
         categoryList.append(contentsOf: [
-            "마케팅/PR/제휴", "IT기획/개발/디자인", "디자이너", "개발", "디자인", "마케팅/PR/제휴", "마케팅/PR/제휴"
+            "마케팅/PR/제휴", "IT기획/개발/디자인", "디자이너", "개발", "디자인", "IT 엔지니어", "인공지능/빅데이터"
         ])
     }
     
@@ -82,7 +77,6 @@ extension CommunityVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("hihi")
         guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailPostVC.className) as? DetailPostVC else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -90,13 +84,13 @@ extension CommunityVC: UITableViewDelegate {
 
 extension CommunityVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return communityContentList.count
+        return manager.contents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommunityTVC.className) as? CommunityTVC else { return UITableViewCell() }
         
-        cell.setCommunityData(number: indexPath.row, data: communityContentList[indexPath.row])
+        cell.setCommunityData(number: indexPath.row, data: manager.contents[indexPath.row])
         return cell
     }
 }
