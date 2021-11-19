@@ -31,6 +31,14 @@ class CommunityTVC: UITableViewCell, UITableViewRegisterable {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        numberLabel.textColor = .black
+        numberLabel.text = ""
+        titleLabel.text = ""
+        subTitleLabel.text = ""
+        chatCountLabel.text = ""
+    }
+    
     // MARK: - Custom Method Part
     
     override func setSelected(_ selected: Bool, animated: Bool) {

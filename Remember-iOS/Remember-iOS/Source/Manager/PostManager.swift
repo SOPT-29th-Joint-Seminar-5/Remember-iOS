@@ -35,4 +35,8 @@ class PostManager {
     public func setComment(to comment: Comment) {
         contents[index].comment.append(comment)
     }
+    
+    public func createPost(title: String, content: String, category: String) {
+        contents.append(Content(title, "닉네임", "IT 엔지니어", "8분 전", content, [category, "직무톡"], []))
+    }
 }
