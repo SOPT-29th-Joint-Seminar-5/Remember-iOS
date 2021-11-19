@@ -16,6 +16,10 @@ class DataTableViewController: UITableViewController {
         case comment
     }
     
+    // MARK: - Lazy UI
+    
+    private lazy var commentHeader = CommentHeader(count: manager.contents[index].comment.count)
+    
     // MARK: - Properties
     
     public var index: Int = 0
@@ -45,7 +49,7 @@ class DataTableViewController: UITableViewController {
         
         setupStatusBar(.white)
         tableView.backgroundColor = .white
-        tableView.contentInset = UIEdgeInsets(top: 48, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 48, left: 0, bottom: 132, right: 0)
         
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
@@ -116,7 +120,7 @@ class DataTableViewController: UITableViewController {
         case .content:
             return UIView()
         case .comment:
-            return CommentHeader(count: manager.contents[index].comment.count)
+            return commentHeader
         }
     }
     
