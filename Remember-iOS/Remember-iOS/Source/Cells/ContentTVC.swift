@@ -23,6 +23,10 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     @IBOutlet weak var viewLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
     
+    // MARK: - Properties
+    
+    public var index: Int = 0
+    
     // MARK: - Manager
     
     private let manager = PostManager.shared
@@ -32,7 +36,6 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     override func awakeFromNib() {
         super.awakeFromNib()
         configUI()
-        setupContentData()
         setupCollectionView()
     }
 
@@ -59,7 +62,7 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     
     private func calculateCellWidth(index: Int) -> CGFloat {
         let label = UILabel()
-        label.text = manager.contents[0].category[index]
+        label.text = manager.contents[self.index].category[index]
         label.font = .systemFont(ofSize: 14)
         label.sizeToFit()
         return label.frame.width + 20
@@ -67,13 +70,15 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - Public Methods
     
-    public func setupContentData() {
+    public func setupContentData(idx: Int) {
         // set dummy data
-        titleLabel.text = manager.contents[0].title
-        nicknameLabel.text = manager.contents[0].nickname
-        jobLabel.text = manager.contents[0].job
-        timeLabel.text = manager.contents[0].time
-        contentLabel.text = manager.contents[0].content
+        print("현재 index: \(idx)")
+        print("현재 Title: \(manager.contents[idx].title)")
+        titleLabel.text = manager.contents[idx].title
+        nicknameLabel.text = manager.contents[idx].nickname
+        jobLabel.text = manager.contents[idx].job
+        timeLabel.text = manager.contents[idx].time
+        contentLabel.text = manager.contents[idx].content
         contentLabel.addCharacterSpacing(paragraphValue: 5)
     }
 }
@@ -81,12 +86,12 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
 // MARK: - UICollectionViewDataSource
 extension ContentTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return manager.contents[0].category.count
+        return manager.contents[index].category.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCVC.className, for: indexPath) as? TypeCVC else { return UICollectionViewCell() }
-        cell.setupData(text: manager.contents[0].category[indexPath.item])
+        cell.setupData(text: manager.contents[index].category[indexPath.item])
         
         switch indexPath.item {
         case 0:

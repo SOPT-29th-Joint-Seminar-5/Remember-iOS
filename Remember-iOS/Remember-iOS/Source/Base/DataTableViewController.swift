@@ -16,6 +16,10 @@ class DataTableViewController: UITableViewController {
         case comment
     }
     
+    // MARK: - Properties
+    
+    public var index: Int = 0
+    
     // MARK: - Manager
     
     private let manager = PostManager.shared
@@ -59,7 +63,7 @@ class DataTableViewController: UITableViewController {
         
         switch section {
         case .content: return 1
-        case .comment: return manager.contents[0].comment.count
+        case .comment: return manager.contents[index].comment.count
         }
     }
 
@@ -69,10 +73,12 @@ class DataTableViewController: UITableViewController {
         switch section {
         case .content:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.className, for: indexPath) as? ContentTVC else { return UITableViewCell() }
+            cell.setupContentData(idx: index)
+            cell.index = index
             return cell
         case .comment:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTVC.className, for: indexPath) as? CommentTVC else { return UITableViewCell() }
-            cell.setupData(nickname: manager.contents[0].comment[0].nickname, content: manager.contents[0].comment[0].content)
+            cell.setupData(nickname: manager.contents[index].comment[indexPath.row].nickname, content: manager.contents[index].comment[indexPath.row].content)
             return cell
         }
     }
@@ -110,7 +116,7 @@ class DataTableViewController: UITableViewController {
         case .content:
             return UIView()
         case .comment:
-            return CommentHeader(count: manager.contents[0].comment.count)
+            return CommentHeader(count: manager.contents[index].comment.count)
         }
     }
     
