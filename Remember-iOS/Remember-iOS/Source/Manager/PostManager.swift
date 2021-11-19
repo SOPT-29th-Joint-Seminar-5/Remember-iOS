@@ -23,4 +23,16 @@ class PostManager {
         Content("디자이너 워라밸 실화인가여?", "닉네임", "웹.앱 디자인", "8분 전", "저는 디자이너고 집에 들어가본지 한달째네요. 집밥이 그립습니다...\n그냥 건강하게만 살고 싶은데...", ["회사생활", "직무톡"], [Comment("닉네임2", "아이고ㅜㅜㅜ 얼른 이직 준비하십쇼.", "3분전")]),
         Content("이직은 어떻게 하는건가요?", "닉네임", "웹.앱 디자인", "8분 전", "이직왕씨 이직을 어떻게 하는거죠.", ["이직/연봉/커리어", "직무톡"], [Comment("닉네임2", "@이직왕", "3분전")])
     ]
+    
+    public private(set) var index: Int = 0
+    
+    // MARK: - Set
+    
+    public func setIndex(to index: Int) {
+        self.index = index
+    }
+    
+    public func setComment(to comment: Comment) {
+        contents[index].comment.append(comment)
+    }
 }

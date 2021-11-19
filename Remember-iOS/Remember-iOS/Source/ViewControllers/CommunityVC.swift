@@ -34,6 +34,7 @@ class CommunityVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupTabbar()
+        communityTableView.reloadData()
     }
     
     // MARK: - Custom Method Part
@@ -79,6 +80,7 @@ extension CommunityVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailPostVC.className) as? DetailPostVC else { return }
         vc.index = indexPath.row
+        manager.setIndex(to: indexPath.row)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

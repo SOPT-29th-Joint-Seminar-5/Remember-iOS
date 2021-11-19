@@ -16,10 +16,6 @@ class DataTableViewController: UITableViewController {
         case comment
     }
     
-    // MARK: - Lazy UI
-    
-    private lazy var commentHeader = CommentHeader(count: manager.contents[index].comment.count)
-    
     // MARK: - Properties
     
     public var index: Int = 0
@@ -120,7 +116,7 @@ class DataTableViewController: UITableViewController {
         case .content:
             return UIView()
         case .comment:
-            return commentHeader
+            return CommentHeader(count: manager.contents[index].comment.count)
         }
     }
     

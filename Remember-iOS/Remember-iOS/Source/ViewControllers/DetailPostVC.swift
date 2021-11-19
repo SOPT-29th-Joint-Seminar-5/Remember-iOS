@@ -46,6 +46,7 @@ class DetailPostVC: DataTableViewController {
         commentSection?.commentTextView.font = .systemFont(ofSize: 16)
         commentSection?.commentTextView.text = placeholder
         commentSection?.commentTextView.textColor = .gray2
+        commentSection?.vc = self
     }
     
     private func render() {
