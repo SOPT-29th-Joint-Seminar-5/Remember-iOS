@@ -26,6 +26,7 @@ class CommunityVC: BaseViewController {
         initDataList()
         setupTV()
         setupCV()
+        setupNavigation()
     }
     
     // MARK: - Custom Method Part
@@ -56,6 +57,11 @@ class CommunityVC: BaseViewController {
         
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
+    }
+    
+    func setupNavigation() {
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
 }
 
