@@ -1,14 +1,15 @@
-<div align="center"> 
-  
-  <b>_국민 명합앱, 리멤버 리디자인_</b> <br/>
-  <b>_합동세미나 5조_</b>
-  
-</div>
-
 
 <img width="1160" alt="스크린샷 2021-11-19 오후 4 05 52" src="https://user-images.githubusercontent.com/55099365/142580065-d8e2faae-9cce-48a3-9ade-c080513b5615.png">
 
 <br/> <br/>
+
+<img width="100" alt="스크린샷 2021-11-19 오후 11 09 06" src="https://user-images.githubusercontent.com/55099365/142635977-bb64526a-0ccd-42e5-ac3a-b62ef83e013e.png">
+
+<div align="center"> 
+  
+<img width="300" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/142635045-ce2d35e1-e6a9-4f9d-aca8-22be10e42bee.gif">
+  
+</div>
 
 <img width="200" alt="스크린샷 2021-11-19 오후 3 52 02" src="https://user-images.githubusercontent.com/55099365/142578235-7b1396c4-0955-41bf-bace-1a80e478a4e5.png">
 
