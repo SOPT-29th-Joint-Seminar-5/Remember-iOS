@@ -68,6 +68,24 @@ class TabBarVC: UITabBarController {
         writeButton.addTarget(self, action: #selector(touchUpWrite), for: .touchUpInside)
     }
     
+    // MARK: - Helper
+    
+    public func hideTabbar() {
+        tabBar.isHidden = true
+        writeButton.isHidden = true
+    }
+    
+    public func showTabbar() {
+        tabBar.isHidden = false
+        writeButton.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.view.bringSubviewToFront(self.writeButton)
+        }
+    }
+    
+    // MARK: - Selector
+    
     @objc
     private func touchUpWrite() {
         let storyboard = UIStoryboard(name: "Community", bundle: nil)

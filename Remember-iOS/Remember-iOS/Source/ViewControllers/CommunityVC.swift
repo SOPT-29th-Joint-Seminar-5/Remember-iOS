@@ -29,6 +29,10 @@ class CommunityVC: BaseViewController {
         setupNavigation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupTabbar()
+    }
+    
     // MARK: - Custom Method Part
     
     func initDataList() {
@@ -63,6 +67,11 @@ class CommunityVC: BaseViewController {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
+    
+    func setupTabbar() {
+        guard let tabbar = tabBarController as? TabBarVC else { return }
+        tabbar.showTabbar()
+    }
 }
 
 // MARK: - Extension Part
@@ -75,7 +84,6 @@ extension CommunityVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("hihi")
         guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailPostVC.className) as? DetailPostVC else { return }
-        vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
 }

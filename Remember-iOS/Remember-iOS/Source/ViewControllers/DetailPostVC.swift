@@ -31,6 +31,7 @@ class DetailPostVC: DataTableViewController {
         hideKeyboardWhenTappedAround()
         setupTextView()
         render()
+        setupTabbar()
     }
     
     // MARK: - Setup Methods
@@ -65,6 +66,11 @@ class DetailPostVC: DataTableViewController {
                 $0.height.equalTo(132)
             }
         }
+    }
+    
+    private func setupTabbar() {
+        guard let tabbar = tabBarController as? TabBarVC else { return }
+        tabbar.hideTabbar()
     }
 }
 
