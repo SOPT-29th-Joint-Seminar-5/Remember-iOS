@@ -43,7 +43,7 @@ class TabBarVC: UITabBarController {
         let tab = UIViewController()
         tab.tabBarItem = UITabBarItem()
         
-        let communityTab = storyboard.instantiateViewController(identifier: "CommunityVC")
+        let communityTab = storyboard.instantiateViewController(identifier: "CommunityNavi")
         communityTab.tabBarItem = UITabBarItem(title: "커뮤니티", image: ImageLiterals.icbtComment.withRenderingMode(.alwaysOriginal), selectedImage: ImageLiterals.messageSelected.withRenderingMode(.alwaysOriginal))
         
         let mypageTab = storyboard.instantiateViewController(identifier: "EmptyVC")
@@ -65,6 +65,33 @@ class TabBarVC: UITabBarController {
         view.addSubview(writeButton)
         
         writeButton.setImage(ImageLiterals.writeIcon, for: .normal)
+        writeButton.addTarget(self, action: #selector(touchUpWrite), for: .touchUpInside)
+    }
+    
+    // MARK: - Helper
+    
+    public func hideTabbar() {
+        tabBar.isHidden = true
+        writeButton.isHidden = true
+    }
+    
+    public func showTabbar() {
+        tabBar.isHidden = false
+        writeButton.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.view.bringSubviewToFront(self.writeButton)
+        }
+    }
+    
+    // MARK: - Selector
+    
+    @objc
+    private func touchUpWrite() {
+        let storyboard = UIStoryboard(name: "Community", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CreateNavi")
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
 

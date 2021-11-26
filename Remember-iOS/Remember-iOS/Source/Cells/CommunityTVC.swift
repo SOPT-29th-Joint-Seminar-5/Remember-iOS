@@ -31,18 +31,29 @@ class CommunityTVC: UITableViewCell, UITableViewRegisterable {
         super.awakeFromNib()
     }
 
+    override func prepareForReuse() {
+        numberLabel.textColor = .black
+        numberLabel.text = ""
+        titleLabel.text = ""
+        subTitleLabel.text = ""
+        chatCountLabel.text = ""
+    }
+    
     // MARK: - Custom Method Part
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func setCommunityData(number: Int, data: CommunityContentData) {
+    func setCommunityData(number: Int, data: Content) {
+        if number < 3 {
+            numberLabel.textColor = .main1
+        }
         numberLabel.text = "\(number+1)"
-        titleLabel.text = data.titleName
-        subTitleLabel.text = data.subTitleName
-        likeCountLabel.text = data.likeNumber
-        chatCountLabel.text = data.chatNumber
+        titleLabel.text = data.title
+        subTitleLabel.text = data.category[0]
+        likeCountLabel.text = "1"
+        chatCountLabel.text = "\(data.comment.count)"
     }
     
 }

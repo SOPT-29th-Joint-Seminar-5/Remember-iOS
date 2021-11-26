@@ -54,12 +54,16 @@ final class CreatePostVC: BaseViewController {
     
     // MARK: - Private Properties
     
-    private var textBottomConstraint: NSLayoutConstraint!
     private let placeholder = "내용을 입력하세요"
+    private var textBottomConstraint: NSLayoutConstraint!
     private var didRegisterNickname = false
     private var canRegister = false {
         didSet { changeRegisterState() }
     }
+    
+    // MARK: - Manager
+    
+    private let manager = PostManager.shared
     
     // MARK: - View Life Cycle
     
@@ -129,11 +133,17 @@ final class CreatePostVC: BaseViewController {
     // MARK: - @IBAction
     
     @IBAction func didTappedCancel(_ sender: Any) {
-        print("tapped cancel...")
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func didTappedRegister(_ sender: Any) {
-        print("tapped Register...")
+        guard let title = titleTextField.text,
+              let content = contentTextView.text,
+              let category = categoryButton.titleLabel?.text
+        else { return }
+        
+        manager.createPost(title: title, content: content, category: category)
+        dismiss(animated: true, completion: nil)
     }
  
     @IBAction func didTappedImage(_ sender: Any) {
