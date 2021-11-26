@@ -219,23 +219,8 @@
             </objects>
             <point key="canvasLocation" x="1047.2" y="130.04926108374386"/>
         </scene>
-        <!--Detail PostVC-->
-        <scene sceneID="JPV-iM-IP2">
-            <objects>
-                <viewController storyboardIdentifier="DetailPostVC" id="5Di-DE-YTB" customClass="DetailPostVC" customModule="Remember_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vlo-Ao-Qfn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Xmj-fs-mSU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cSk-ii-rRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2458" y="129"/>
-        </scene>
         <!--View Controller-->
-        <scene sceneID="Wcm-Xa-p9L">
+        <scene sceneID="JPV-iM-IP2">
             <objects>
                 <viewController storyboardIdentifier="EmptyVC" id="8fB-Dl-k3n" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eF6-hm-gHO">
@@ -246,6 +231,21 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUc-S5-57U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2458" y="129"/>
+        </scene>
+        <!--Detail PostVC-->
+        <scene sceneID="Wcm-Xa-p9L">
+            <objects>
+                <viewController storyboardIdentifier="DetailPostVC" id="5Di-DE-YTB" customClass="DetailPostVC" customModule="Remember_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vlo-Ao-Qfn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xmj-fs-mSU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSk-ii-rRr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1729" y="130"/>
         </scene>
