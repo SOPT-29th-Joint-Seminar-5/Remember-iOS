@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-private extension CGFloat {
+extension CGFloat {
     static var keyboardHeight: CGFloat = 0.0
 }
 
