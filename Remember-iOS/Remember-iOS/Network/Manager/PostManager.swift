@@ -2,18 +2,26 @@
 //  PostManager.swift
 //  Remember-iOS
 //
-//  Created by SHIN YOON AH on 2021/11/16.
+//  Created by SHIN YOON AH on 2021/11/30.
 //
 
-import Foundation
+import Moya
 
-class PostManager {
+final class PostManager {
     
-    static let shared = PostManager()
+    // MARK: - Static Properties
+    
+    static let shared: PostManager = PostManager()
+    
+    // MARK: - Network Properties
+    
+    private let authProvider = MoyaProvider<PostService>(plugins: [NetworkLoggerPlugin(verbose: true)])
     
     // MARK: - Initializer
     
     private init() { }
+    
+    // MARK: - Public Properties
     
     public private(set) var contents: [Content] = [
         Content("손이 너~무 느린 후임 어떡하죠..", "닉네임", "웹.앱 디자인", "8분 전", "제가 성격이 급한 편이긴 한데..\n어떻게 잘 가르쳐야 할까요?", ["디자이너", "직무톡"], [Comment("닉네임2", "이참에 iOS개발자가 되는 건 어떤가요?", "3분전"), Comment("닉네임4", "iOS개발자가 되는게 맞는 거 같네요..", "3분전"), Comment("닉네임1", "저는 iOS 개발 추천이요!!", "3분전")]),
@@ -39,4 +47,5 @@ class PostManager {
     public func createPost(title: String, content: String, category: String) {
         contents.append(Content(title, "닉네임", "IT 엔지니어", "8분 전", content, [category, "직무톡"], []))
     }
+
 }
