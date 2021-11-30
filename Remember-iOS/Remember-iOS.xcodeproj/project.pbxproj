@@ -34,6 +34,13 @@
 		ED581106273F998C0043AC27 /* ColorLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED581105273F998C0043AC27 /* ColorLiteral.swift */; };
 		ED581108273F9A8C0043AC27 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED581107273F9A8C0043AC27 /* ImageLiteral.swift */; };
 		ED58110B273FA1970043AC27 /* CreatePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED58110A273FA1970043AC27 /* CreatePostVC.swift */; };
+		ED68863E275656AB0031329A /* GeneralAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68863D275656AB0031329A /* GeneralAPI.swift */; };
+		ED688640275657460031329A /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68863F275657460031329A /* NetworkLoggerPlugin.swift */; };
+		ED688643275658270031329A /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED688642275658270031329A /* MainService.swift */; };
+		ED688645275658390031329A /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED688644275658390031329A /* PostService.swift */; };
+		ED6886472756588C0031329A /* MainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6886462756588C0031329A /* MainManager.swift */; };
+		ED688649275658A40031329A /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED688648275658A40031329A /* PostManager.swift */; };
+		ED68864B27565A6C0031329A /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED68864A27565A6C0031329A /* PostRequest.swift */; };
 		EDE45B9727436758007DB91E /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45B9627436758007DB91E /* DataTableViewController.swift */; };
 		EDE45B9A27436A65007DB91E /* ContentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45B9827436A65007DB91E /* ContentTVC.swift */; };
 		EDE45B9B27436A65007DB91E /* ContentTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45B9927436A65007DB91E /* ContentTVC.xib */; };
@@ -42,7 +49,6 @@
 		EDE45BA127436C91007DB91E /* DetailPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA027436C91007DB91E /* DetailPostVC.swift */; };
 		EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA2274374B5007DB91E /* NavigationBar.swift */; };
 		EDE45BA52743841D007DB91E /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA42743841D007DB91E /* Content.swift */; };
-		EDE45BA8274384DF007DB91E /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA7274384DF007DB91E /* PostManager.swift */; };
 		EDE45BAA27438A2E007DB91E /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BA927438A2E007DB91E /* UILabel+.swift */; };
 		EDE45BAD27438BB9007DB91E /* TypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE45BAB27438BB9007DB91E /* TypeCVC.swift */; };
 		EDE45BAE27438BB9007DB91E /* TypeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE45BAC27438BB9007DB91E /* TypeCVC.xib */; };
@@ -83,6 +89,13 @@
 		ED581105273F998C0043AC27 /* ColorLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLiteral.swift; sourceTree = "<group>"; };
 		ED581107273F9A8C0043AC27 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 		ED58110A273FA1970043AC27 /* CreatePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostVC.swift; sourceTree = "<group>"; };
+		ED68863D275656AB0031329A /* GeneralAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAPI.swift; sourceTree = "<group>"; };
+		ED68863F275657460031329A /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		ED688642275658270031329A /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		ED688644275658390031329A /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		ED6886462756588C0031329A /* MainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainManager.swift; sourceTree = "<group>"; };
+		ED688648275658A40031329A /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		ED68864A27565A6C0031329A /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
 		EDE45B9627436758007DB91E /* DataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
 		EDE45B9827436A65007DB91E /* ContentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTVC.swift; sourceTree = "<group>"; };
 		EDE45B9927436A65007DB91E /* ContentTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTVC.xib; sourceTree = "<group>"; };
@@ -91,7 +104,6 @@
 		EDE45BA027436C91007DB91E /* DetailPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostVC.swift; sourceTree = "<group>"; };
 		EDE45BA2274374B5007DB91E /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		EDE45BA42743841D007DB91E /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
-		EDE45BA7274384DF007DB91E /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		EDE45BA927438A2E007DB91E /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		EDE45BAB27438BB9007DB91E /* TypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCVC.swift; sourceTree = "<group>"; };
 		EDE45BAC27438BB9007DB91E /* TypeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCVC.xib; sourceTree = "<group>"; };
@@ -150,6 +162,7 @@
 		ED5810C5273F82D00043AC27 /* Remember-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				ED688637275656120031329A /* Network */,
 				ED5810DB273F87C20043AC27 /* Source */,
 				ED5810DA273F87BA0043AC27 /* Resource */,
 			);
@@ -169,12 +182,10 @@
 		ED5810DB273F87C20043AC27 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				EDE45BA6274384D0007DB91E /* Manager */,
 				ED581104273F997A0043AC27 /* Literals */,
 				ED581101273F98DC0043AC27 /* Base */,
 				ED5810FC273F97F20043AC27 /* Protocol */,
 				ED5810E4273F8C610043AC27 /* Extensions */,
-				ED5810E3273F8C5F0043AC27 /* Models */,
 				ED5810E2273F8C1E0043AC27 /* Supporting Files */,
 				ED5810E1273F8C1B0043AC27 /* Cells */,
 				ED5810E0273F8C0D0043AC27 /* Components */,
@@ -257,15 +268,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ED5810E3273F8C5F0043AC27 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				7744C55C2741942300325814 /* AppContentDataModel.swift */,
-				EDE45BA42743841D007DB91E /* Content.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		ED5810E4273F8C610043AC27 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,10 +310,50 @@
 			path = Literals;
 			sourceTree = "<group>";
 		};
-		EDE45BA6274384D0007DB91E /* Manager */ = {
+		ED688637275656120031329A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				EDE45BA7274384DF007DB91E /* PostManager.swift */,
+				ED68863B2756567B0031329A /* Manager */,
+				ED68863A275656740031329A /* Foundation */,
+				ED688639275656640031329A /* APIService */,
+				ED688638275656380031329A /* Model */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		ED688638275656380031329A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7744C55C2741942300325814 /* AppContentDataModel.swift */,
+				EDE45BA42743841D007DB91E /* Content.swift */,
+				ED68864A27565A6C0031329A /* PostRequest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED688639275656640031329A /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				ED688642275658270031329A /* MainService.swift */,
+				ED688644275658390031329A /* PostService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		ED68863A275656740031329A /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				ED68863D275656AB0031329A /* GeneralAPI.swift */,
+				ED68863F275657460031329A /* NetworkLoggerPlugin.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		ED68863B2756567B0031329A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				ED6886462756588C0031329A /* MainManager.swift */,
+				ED688648275658A40031329A /* PostManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -441,13 +483,18 @@
 				ED5810FB273F97C20043AC27 /* ClassName+UIViewController.swift in Sources */,
 				ED581100273F980B0043AC27 /* UITableViewRegisterable.swift in Sources */,
 				EDE45BA52743841D007DB91E /* Content.swift in Sources */,
+				ED68863E275656AB0031329A /* GeneralAPI.swift in Sources */,
 				ED5810F0273F96920043AC27 /* UIView+.swift in Sources */,
+				ED68864B27565A6C0031329A /* PostRequest.swift in Sources */,
 				EDE45B9E27436BF4007DB91E /* CommentTVC.swift in Sources */,
 				ED581108273F9A8C0043AC27 /* ImageLiteral.swift in Sources */,
+				ED688649275658A40031329A /* PostManager.swift in Sources */,
 				ED5810EE273F8FFC0043AC27 /* CommunityVC.swift in Sources */,
+				ED688643275658270031329A /* MainService.swift in Sources */,
 				ED58110B273FA1970043AC27 /* CreatePostVC.swift in Sources */,
 				ED5810F7273F971A0043AC27 /* UITextField+.swift in Sources */,
 				ED581103273F98F00043AC27 /* BaseViewController.swift in Sources */,
+				ED6886472756588C0031329A /* MainManager.swift in Sources */,
 				ED5810F9273F973C0043AC27 /* Encodable+.swift in Sources */,
 				779015C327477ED000F83ACD /* TabBarVC.swift in Sources */,
 				7744C56E2742414700325814 /* CategoryCVC.swift in Sources */,
@@ -456,6 +503,7 @@
 				EDE45B9727436758007DB91E /* DataTableViewController.swift in Sources */,
 				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
 				ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */,
+				ED688640275657460031329A /* NetworkLoggerPlugin.swift in Sources */,
 				EDE45BA127436C91007DB91E /* DetailPostVC.swift in Sources */,
 				EDE45BB52743AA1F007DB91E /* CommentSection.swift in Sources */,
 				EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */,
@@ -463,8 +511,8 @@
 				ED5810FE273F97FA0043AC27 /* UICollectionViewRegisterable.swift in Sources */,
 				7744C55D2741942300325814 /* AppContentDataModel.swift in Sources */,
 				ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */,
-				EDE45BA8274384DF007DB91E /* PostManager.swift in Sources */,
 				ED5810F2273F96CB0043AC27 /* UIScreen+.swift in Sources */,
+				ED688645275658390031329A /* PostService.swift in Sources */,
 				7744C55A2741861000325814 /* CommunityTVC.swift in Sources */,
 				EDE45BAD27438BB9007DB91E /* TypeCVC.swift in Sources */,
 				EDE45BB12743919C007DB91E /* CommentHeader.swift in Sources */,
