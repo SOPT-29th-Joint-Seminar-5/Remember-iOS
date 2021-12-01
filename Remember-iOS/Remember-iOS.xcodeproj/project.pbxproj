@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E759A14EF5DA4738C4C6B98 /* Pods_Remember_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6CF8216FA7164CF1BC22978 /* Pods_Remember_iOS.framework */; };
+		7700D17E2757D905009CD6E3 /* MainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7700D17D2757D905009CD6E3 /* MainDataModel.swift */; };
 		7744C55A2741861000325814 /* CommunityTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C5582741861000325814 /* CommunityTVC.swift */; };
 		7744C55B2741861000325814 /* CommunityTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7744C5592741861000325814 /* CommunityTVC.xib */; };
 		7744C55D2741942300325814 /* AppContentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7744C55C2741942300325814 /* AppContentDataModel.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7700D17D2757D905009CD6E3 /* MainDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataModel.swift; sourceTree = "<group>"; };
 		7744C5582741861000325814 /* CommunityTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityTVC.swift; sourceTree = "<group>"; };
 		7744C5592741861000325814 /* CommunityTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityTVC.xib; sourceTree = "<group>"; };
 		7744C55C2741942300325814 /* AppContentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentDataModel.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				7744C55C2741942300325814 /* AppContentDataModel.swift */,
 				EDE45BA42743841D007DB91E /* Content.swift */,
 				ED68864A27565A6C0031329A /* PostRequest.swift */,
+				7700D17D2757D905009CD6E3 /* MainDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				EDE45BA52743841D007DB91E /* Content.swift in Sources */,
 				ED68863E275656AB0031329A /* GeneralAPI.swift in Sources */,
 				ED5810F0273F96920043AC27 /* UIView+.swift in Sources */,
+				7700D17E2757D905009CD6E3 /* MainDataModel.swift in Sources */,
 				ED68864B27565A6C0031329A /* PostRequest.swift in Sources */,
 				EDE45B9E27436BF4007DB91E /* CommentTVC.swift in Sources */,
 				ED581108273F9A8C0043AC27 /* ImageLiteral.swift in Sources */,

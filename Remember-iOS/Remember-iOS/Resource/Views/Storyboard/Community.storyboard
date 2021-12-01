@@ -211,6 +211,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="svB-aw-Smj"/>
                     <connections>
+                        <outlet property="bannerImageView" destination="2WD-TC-kuC" id="Krp-Wb-bC7"/>
                         <outlet property="categoryCollectionView" destination="cg6-TD-1zq" id="8A4-uR-2LY"/>
                         <outlet property="communityTableView" destination="xor-8W-mcl" id="Qc8-uU-yCM"/>
                     </connections>
