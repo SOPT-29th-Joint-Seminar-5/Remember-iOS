@@ -18,7 +18,6 @@ class CommunityVC: BaseViewController {
     
     @IBOutlet weak var communityTableView: UITableView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
-    
     @IBOutlet weak var bannerImageView: UIImageView!
     
     // MARK: - Vars & Lets Part
@@ -82,11 +81,18 @@ class CommunityVC: BaseViewController {
             switch response { // response 응답이 들어왔을 때
             case .success(let result): // 성공하면 result가 들어오는데 result에 data가 들어가 있어요!
                 do {
-                    // 이건 예시, var characterData: MainModel?인 model값에다가 MainModel로 result형식을 바꿔서 넣어준다는 뜻!!
                     self?.mainData = try result.map(MainResponseData.self)
                     self?.categoryList = self?.mainData?.data?.tagList ?? []
                     print("categoryList", self?.categoryList)
                     self?.categoryCollectionView.reloadData()
+                    
+                    let url = URL(string: self?.mainData?.data?.image ?? "")
+                    
+                    DispatchQueue.global().async {
+                        let data = try? Data(contentsOf: url!)
+                        DispatchQueue.main.async { self?.bannerImageView.image = UIImage(data: data!) }
+                    }
+                    
                 } catch(let err) {
                     print(err.localizedDescription)
                 }
