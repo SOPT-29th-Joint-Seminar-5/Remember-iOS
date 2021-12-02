@@ -34,7 +34,6 @@ class CommunityVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initDataList()
         setupTV()
         setupCV()
         setupNavigation()
@@ -44,16 +43,9 @@ class CommunityVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupTabbar()
-        //communityTableView.reloadData()
     }
     
     // MARK: - Custom Method Part
-    
-    func initDataList() {
-//        categoryList.append(contentsOf: [
-//            "마케팅/PR/제휴", "IT기획/개발/디자인", "디자이너", "개발", "디자인", "IT 엔지니어", "인공지능/빅데이터"
-//        ])
-    }
     
     func setupTV() {
         CommunityTVC.register(target: communityTableView)
@@ -80,9 +72,9 @@ class CommunityVC: BaseViewController {
     }
     
     func fetchMainData() {
-        authProvider.request(.getCategoryData) { [weak self] response in // request 부분에 은주가 쓸 case를 넣어주세요!
-            switch response { // response 응답이 들어왔을 때
-            case .success(let result): // 성공하면 result가 들어오는데 result에 data가 들어가 있어요!
+        authProvider.request(.getCategoryData) { [weak self] response in
+            switch response {
+            case .success(let result):
                 do {
                     self?.mainData = try result.map(MainResponseData.self)
                     self?.categoryList = self?.mainData?.data?.tagList ?? []
@@ -106,9 +98,9 @@ class CommunityVC: BaseViewController {
     }
     
     func fetchListData() {
-        authProvider.request(.getMainData) { [weak self] response in // request 부분에 은주가 쓸 case를 넣어주세요!
-            switch response { // response 응답이 들어왔을 때
-            case .success(let result): // 성공하면 result가 들어오는데 result에 data가 들어가 있어요!
+        authProvider.request(.getMainData) { [weak self] response in
+            switch response {
+            case .success(let result):
                 do {
                     self?.listData = try result.map(MainListResponseData.self)
                     self?.contentList = self?.listData?.data?.mainList ?? []

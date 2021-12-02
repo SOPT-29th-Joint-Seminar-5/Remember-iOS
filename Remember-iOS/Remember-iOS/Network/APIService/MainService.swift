@@ -54,5 +54,4 @@ extension MainService: TargetType {
             return ["Content-Type": "application/json"]
         }
     }
-    
 }
