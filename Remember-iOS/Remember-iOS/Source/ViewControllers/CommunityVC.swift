@@ -13,6 +13,7 @@ class CommunityVC: BaseViewController {
     private let authProvider = MoyaProvider<MainService>(plugins: [NetworkLoggerPlugin(verbose: true)])
     
     var mainData: MainResponseData?
+    var listData: MainListResponseData?
 
     // MARK: - UI Component Part
     
@@ -23,6 +24,7 @@ class CommunityVC: BaseViewController {
     // MARK: - Vars & Lets Part
     
     var categoryList: [String] = []
+    var contentList: [MainList] = []
     
     // MARK: - Manager
     
@@ -37,11 +39,12 @@ class CommunityVC: BaseViewController {
         setupCV()
         setupNavigation()
         fetchMainData()
+        fetchListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupTabbar()
-        communityTableView.reloadData()
+        //communityTableView.reloadData()
     }
     
     // MARK: - Custom Method Part
@@ -101,6 +104,24 @@ class CommunityVC: BaseViewController {
             }
         }
     }
+    
+    func fetchListData() {
+        authProvider.request(.getMainData) { [weak self] response in // request 부분에 은주가 쓸 case를 넣어주세요!
+            switch response { // response 응답이 들어왔을 때
+            case .success(let result): // 성공하면 result가 들어오는데 result에 data가 들어가 있어요!
+                do {
+                    self?.listData = try result.map(MainListResponseData.self)
+                    self?.contentList = self?.listData?.data?.mainList ?? []
+                    print("categoryList", self?.categoryList)
+                    self?.communityTableView.reloadData()
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err): // 실패하면
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - Extension Part
@@ -120,13 +141,13 @@ extension CommunityVC: UITableViewDelegate {
 
 extension CommunityVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.contents.count
+        return contentList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommunityTVC.className) as? CommunityTVC else { return UITableViewCell() }
         
-        cell.setCommunityData(number: indexPath.row, data: manager.contents[indexPath.row])
+        cell.setCommunityData(number: indexPath.row, data: contentList[indexPath.row])
         return cell
     }
 }

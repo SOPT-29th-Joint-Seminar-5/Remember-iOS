@@ -45,15 +45,15 @@ class CommunityTVC: UITableViewCell, UITableViewRegisterable {
         super.setSelected(selected, animated: animated)
     }
     
-    func setCommunityData(number: Int, data: Content) {
+    func setCommunityData(number: Int, data: MainList) {
         if number < 3 {
             numberLabel.textColor = .main1
         }
         numberLabel.text = "\(number+1)"
-        titleLabel.text = data.title
-        subTitleLabel.text = data.category[0]
-        likeCountLabel.text = "1"
-        chatCountLabel.text = "\(data.comment.count)"
+        titleLabel.text = data.subject
+        subTitleLabel.text = data.tagName
+        likeCountLabel.text = "\(data.likeCnt)"
+        chatCountLabel.text = "\(data.commentCnt)"
     }
     
 }
