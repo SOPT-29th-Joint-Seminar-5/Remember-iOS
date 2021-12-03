@@ -73,7 +73,9 @@ class DataTableViewController: UITableViewController {
         
         switch section {
         case .content: return 1
-        case .comment: return 3
+        case .comment:
+            let commentCnt = manager.views < 3 ? manager.views : 3
+            return commentCnt
         }
     }
 

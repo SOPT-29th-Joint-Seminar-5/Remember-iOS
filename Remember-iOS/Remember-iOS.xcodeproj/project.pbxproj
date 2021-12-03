@@ -19,6 +19,7 @@
 		779015C327477ED000F83ACD /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015C227477ED000F83ACD /* TabBarVC.swift */; };
 		779015C52747800C00F83ACD /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015C42747800C00F83ACD /* CALayer+.swift */; };
 		ED39AE03275A34BE00F9EAEE /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED39AE02275A34BE00F9EAEE /* PostResponse.swift */; };
+		ED39AE05275A480800F9EAEE /* CreateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED39AE04275A480800F9EAEE /* CreateResponse.swift */; };
 		ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810C6273F82D00043AC27 /* AppDelegate.swift */; };
 		ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810C8273F82D00043AC27 /* SceneDelegate.swift */; };
 		ED5810D0273F82D10043AC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5810CF273F82D10043AC27 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		8DA145BCE7B81C9A0DACC18B /* Pods-Remember-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remember-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Remember-iOS/Pods-Remember-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CF8216FA7164CF1BC22978 /* Pods_Remember_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remember_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED39AE02275A34BE00F9EAEE /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		ED39AE04275A480800F9EAEE /* CreateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateResponse.swift; sourceTree = "<group>"; };
 		ED5810C3273F82D00043AC27 /* Remember-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remember-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5810C6273F82D00043AC27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5810C8273F82D00043AC27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				7700D17D2757D905009CD6E3 /* MainListDataModel.swift */,
 				7700D17F2759CD77009CD6E3 /* CategoryDataModel.swift */,
 				ED39AE02275A34BE00F9EAEE /* PostResponse.swift */,
+				ED39AE04275A480800F9EAEE /* CreateResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				ED5810F5273F97020043AC27 /* UIViewController+.swift in Sources */,
 				ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */,
 				ED688640275657460031329A /* NetworkLoggerPlugin.swift in Sources */,
+				ED39AE05275A480800F9EAEE /* CreateResponse.swift in Sources */,
 				EDE45BA127436C91007DB91E /* DetailPostVC.swift in Sources */,
 				EDE45BB52743AA1F007DB91E /* CommentSection.swift in Sources */,
 				EDE45BA3274374B5007DB91E /* NavigationBar.swift in Sources */,

@@ -17,6 +17,7 @@ final class PostManager {
     
     private let authProvider = MoyaProvider<PostService>(plugins: [NetworkLoggerPlugin(verbose: true)])
     private var postModel: PostReponse?
+    private var createModel: CreateResponse?
     
     // MARK: - Initializer
     
@@ -90,6 +91,31 @@ extension PostManager {
             case .failure(let err):
                 print(err.localizedDescription)
                 completion(nil, err)
+            }
+        }
+    }
+    
+    // Post /post
+    func dispatchPost(tag: String, title: String, content: String, completion: @escaping ((Int, String) -> ())) {
+        let param = PostRequest.init(tag, title, content)
+        
+        authProvider.request(.createPost(param)) { [weak self] response in
+            switch response {
+            case .success(let result):
+                do {
+                    self?.createModel = try result.map(CreateResponse.self)
+                    
+                    guard let data = self?.createModel else { return }
+
+                    completion(data.status, data.message)
+                    
+                } catch(let err) {
+                    print(err.localizedDescription)
+                    completion(400, "파라미터 값이 잘못되었습니다.")
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(500, "서버 내부 에러")
             }
         }
     }

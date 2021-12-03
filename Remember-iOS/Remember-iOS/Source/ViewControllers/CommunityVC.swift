@@ -38,11 +38,11 @@ class CommunityVC: BaseViewController {
         setupCV()
         setupNavigation()
         fetchCategoryData()
-        fetchListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupTabbar()
+        fetchListData()
     }
     
     // MARK: - Custom Method Part
