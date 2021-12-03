@@ -7,16 +7,24 @@
 
 import UIKit
 
+import Moya
+
 class CommunityVC: BaseViewController {
+    private let authProvider = MoyaProvider<MainService>(plugins: [NetworkLoggerPlugin(verbose: true)])
+    
+    var categoryData: CategoryResponseData?
+    var listData: MainListResponseData?
 
     // MARK: - UI Component Part
     
     @IBOutlet weak var communityTableView: UITableView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var bannerImageView: UIImageView!
     
     // MARK: - Vars & Lets Part
     
     var categoryList: [String] = []
+    var contentList: [MainList] = []
     
     // MARK: - Manager
     
@@ -26,24 +34,18 @@ class CommunityVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initDataList()
         setupTV()
         setupCV()
         setupNavigation()
+        fetchCategoryData()
+        fetchListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupTabbar()
-        communityTableView.reloadData()
     }
     
     // MARK: - Custom Method Part
-    
-    func initDataList() {
-        categoryList.append(contentsOf: [
-            "마케팅/PR/제휴", "IT기획/개발/디자인", "디자이너", "개발", "디자인", "IT 엔지니어", "인공지능/빅데이터"
-        ])
-    }
     
     func setupTV() {
         CommunityTVC.register(target: communityTableView)
@@ -68,6 +70,50 @@ class CommunityVC: BaseViewController {
         guard let tabbar = tabBarController as? TabBarVC else { return }
         tabbar.showTabbar()
     }
+    
+    func fetchCategoryData() {
+        authProvider.request(.category) { [weak self] response in
+            switch response {
+            case .success(let result):
+                do {
+                    self?.categoryData = try result.map(CategoryResponseData.self)
+                    self?.categoryList = self?.categoryData?.data?.tagList ?? []
+                    print("categoryList", self?.categoryList)
+                    self?.categoryCollectionView.reloadData()
+                    
+                    let url = URL(string: self?.categoryData?.data?.image ?? "")
+                    
+                    DispatchQueue.global().async {
+                        let data = try? Data(contentsOf: url!)
+                        DispatchQueue.main.async { self?.bannerImageView.image = UIImage(data: data!) }
+                    }
+                    
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err): // 실패하면
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func fetchListData() {
+        authProvider.request(.main) { [weak self] response in
+            switch response {
+            case .success(let result):
+                do {
+                    self?.listData = try result.map(MainListResponseData.self)
+                    self?.contentList = self?.listData?.data?.mainList ?? []
+                    print("categoryList", self?.categoryList)
+                    self?.communityTableView.reloadData()
+                } catch(let err) {
+                    print(err.localizedDescription)
+                }
+            case .failure(let err): // 실패하면
+                print(err.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - Extension Part
@@ -87,13 +133,13 @@ extension CommunityVC: UITableViewDelegate {
 
 extension CommunityVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return manager.contents.count
+        return contentList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommunityTVC.className) as? CommunityTVC else { return UITableViewCell() }
         
-        cell.setCommunityData(number: indexPath.row, data: manager.contents[indexPath.row])
+        cell.setCommunityData(number: indexPath.row, data: contentList[indexPath.row])
         return cell
     }
 }
