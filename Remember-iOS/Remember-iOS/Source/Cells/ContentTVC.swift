@@ -67,12 +67,10 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     // MARK: - Public Methods
     
     public func setupData() {
-        print("manager.title", manager.title)
-        
         titleLabel.text = manager.title
         nicknameLabel.text = manager.nickname ?? "닉네임2"
         jobLabel.text = manager.duty ?? "iOS개발자"
-        timeLabel.text = "8분 전"
+        timeLabel.text = "방금 전"
         viewLabel.text = "조회 \(manager.views)"
         likeLabel.text = "좋아요 \(manager.likes)"
         contentLabel.text = manager.content

@@ -58,7 +58,6 @@ class DataTableViewController: UITableViewController {
         manager.fetchPost(id: id) { [weak self] data, error in
             guard let self = self else { return }
             self.tableView.reloadData()
-            print("reload complete")
         }
     }
 

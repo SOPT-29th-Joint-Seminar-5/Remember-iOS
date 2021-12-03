@@ -12,16 +12,16 @@ struct CreateResponse: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: PostData?
+    let data: NewPost?
 }
 
 // MARK: - PostData
-struct PostData: Codable {
-    let post: NewPost
+struct NewPost: Codable {
+    let post: Post
 }
 
 // MARK: - NewPost
-struct NewPost: Codable {
+struct Post: Codable {
     let id, communityID: Int
     let subject, contents: String
     let nickname, duty: String?

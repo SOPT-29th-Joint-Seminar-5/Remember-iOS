@@ -1,5 +1,5 @@
 //
-//  PostResponse.swift
+//  DetailReponse.swift
 //  Remember-iOS
 //
 //  Created by SHIN YOON AH on 2021/12/03.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - PostReponse
-struct PostReponse: Codable {
+// MARK: - DetailReponse
+struct DetailReponse: Codable {
     let status: Int
     let success: Bool
     let message: String
@@ -17,11 +17,11 @@ struct PostReponse: Codable {
 
 // MARK: - DataClass
 struct Exist: Codable {
-    let exist: Post
+    let exist: DetailedPost
 }
 
 // MARK: - Exist
-struct Post: Codable {
+struct DetailedPost: Codable {
     let tagName, subject: String
     let nickname, duty: String?
     let contents: String
