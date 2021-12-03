@@ -23,10 +23,6 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     @IBOutlet weak var viewLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
     
-    // MARK: - Properties
-    
-    public var index: Int = 0
-    
     // MARK: - Manager
     
     private let manager = PostManager.shared
@@ -60,9 +56,9 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - Private Methods
     
-    private func calculateCellWidth(index: Int) -> CGFloat {
+    private func calculateCellWidth() -> CGFloat {
         let label = UILabel()
-        label.text = manager.contents[self.index].category[index]
+        label.text = manager.tagName
         label.font = .systemFont(ofSize: 14)
         label.sizeToFit()
         return label.frame.width + 20
@@ -70,28 +66,31 @@ class ContentTVC: UITableViewCell, UITableViewRegisterable {
     
     // MARK: - Public Methods
     
-    public func setupContentData(idx: Int) {
-        // set dummy data
-        print("현재 index: \(idx)")
-        print("현재 Title: \(manager.contents[idx].title)")
-        titleLabel.text = manager.contents[idx].title
-        nicknameLabel.text = manager.contents[idx].nickname
-        jobLabel.text = manager.contents[idx].job
-        timeLabel.text = manager.contents[idx].time
-        contentLabel.text = manager.contents[idx].content
+    public func setupData() {
+        print("manager.title", manager.title)
+        
+        titleLabel.text = manager.title
+        nicknameLabel.text = manager.nickname ?? "닉네임2"
+        jobLabel.text = manager.duty ?? "iOS개발자"
+        timeLabel.text = "8분 전"
+        viewLabel.text = "조회 \(manager.views)"
+        likeLabel.text = "좋아요 \(manager.likes)"
+        contentLabel.text = manager.content
         contentLabel.addCharacterSpacing(paragraphValue: 5)
+        categoryCollectionView.reloadData()
     }
+    
 }
 
 // MARK: - UICollectionViewDataSource
 extension ContentTVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return manager.contents[index].category.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCVC.className, for: indexPath) as? TypeCVC else { return UICollectionViewCell() }
-        cell.setupData(text: manager.contents[index].category[indexPath.item])
+        cell.setupData(text: manager.tagName)
         
         switch indexPath.item {
         case 0:
@@ -107,7 +106,7 @@ extension ContentTVC: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ContentTVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: calculateCellWidth(index: indexPath.item), height: collectionView.frame.height)
+        return CGSize(width: calculateCellWidth(), height: collectionView.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

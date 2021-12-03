@@ -18,7 +18,7 @@ class DataTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    public var index: Int = 0
+    public var id: Int?
     
     // MARK: - Manager
     
@@ -35,6 +35,7 @@ class DataTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        connectServer()
     }
     
     // MARK: - Setup Methods
@@ -51,6 +52,15 @@ class DataTableViewController: UITableViewController {
             tableView.sectionHeaderTopPadding = 0
         }
     }
+    
+    private func connectServer() {
+        guard let id = id else { return }
+        manager.fetchPost(id: id) { [weak self] data, error in
+            guard let self = self else { return }
+            self.tableView.reloadData()
+            print("reload complete")
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -63,7 +73,7 @@ class DataTableViewController: UITableViewController {
         
         switch section {
         case .content: return 1
-        case .comment: return manager.contents[index].comment.count
+        case .comment: return 3
         }
     }
 
@@ -73,12 +83,11 @@ class DataTableViewController: UITableViewController {
         switch section {
         case .content:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTVC.className, for: indexPath) as? ContentTVC else { return UITableViewCell() }
-            cell.setupContentData(idx: index)
-            cell.index = index
+            cell.setupData()
             return cell
         case .comment:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CommentTVC.className, for: indexPath) as? CommentTVC else { return UITableViewCell() }
-            cell.setupData(nickname: manager.contents[index].comment[indexPath.row].nickname, content: manager.contents[index].comment[indexPath.row].content)
+            cell.setupData(nickname: manager.contents[0].comment[0].nickname, content: manager.contents[0].comment[0].content)
             return cell
         }
     }
@@ -116,7 +125,7 @@ class DataTableViewController: UITableViewController {
         case .content:
             return UIView()
         case .comment:
-            return CommentHeader(count: manager.contents[index].comment.count)
+            return CommentHeader(count: manager.views)
         }
     }
     

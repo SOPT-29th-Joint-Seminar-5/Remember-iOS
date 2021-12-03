@@ -18,6 +18,7 @@
 		779015C127477E4B00F83ACD /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779015C027477E4B00F83ACD /* TabBar.storyboard */; };
 		779015C327477ED000F83ACD /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015C227477ED000F83ACD /* TabBarVC.swift */; };
 		779015C52747800C00F83ACD /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779015C42747800C00F83ACD /* CALayer+.swift */; };
+		ED39AE03275A34BE00F9EAEE /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED39AE02275A34BE00F9EAEE /* PostResponse.swift */; };
 		ED5810C7273F82D00043AC27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810C6273F82D00043AC27 /* AppDelegate.swift */; };
 		ED5810C9273F82D00043AC27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5810C8273F82D00043AC27 /* SceneDelegate.swift */; };
 		ED5810D0273F82D10043AC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5810CF273F82D10043AC27 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		8CF2461BBC32D3FA0490DA95 /* Pods-Remember-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remember-iOS.release.xcconfig"; path = "Target Support Files/Pods-Remember-iOS/Pods-Remember-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		8DA145BCE7B81C9A0DACC18B /* Pods-Remember-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Remember-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Remember-iOS/Pods-Remember-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E6CF8216FA7164CF1BC22978 /* Pods_Remember_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Remember_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED39AE02275A34BE00F9EAEE /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
 		ED5810C3273F82D00043AC27 /* Remember-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remember-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5810C6273F82D00043AC27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5810C8273F82D00043AC27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 				ED68864A27565A6C0031329A /* PostRequest.swift */,
 				7700D17D2757D905009CD6E3 /* MainListDataModel.swift */,
 				7700D17F2759CD77009CD6E3 /* CategoryDataModel.swift */,
+				ED39AE02275A34BE00F9EAEE /* PostResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 			files = (
 				ED5810FB273F97C20043AC27 /* ClassName+UIViewController.swift in Sources */,
 				ED581100273F980B0043AC27 /* UITableViewRegisterable.swift in Sources */,
+				ED39AE03275A34BE00F9EAEE /* PostResponse.swift in Sources */,
 				EDE45BA52743841D007DB91E /* Content.swift in Sources */,
 				ED68863E275656AB0031329A /* GeneralAPI.swift in Sources */,
 				ED5810F0273F96920043AC27 /* UIView+.swift in Sources */,

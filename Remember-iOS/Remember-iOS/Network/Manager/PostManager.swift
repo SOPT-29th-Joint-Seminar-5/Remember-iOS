@@ -16,6 +16,7 @@ final class PostManager {
     // MARK: - Network Properties
     
     private let authProvider = MoyaProvider<PostService>(plugins: [NetworkLoggerPlugin(verbose: true)])
+    private var postModel: PostReponse?
     
     // MARK: - Initializer
     
@@ -34,6 +35,14 @@ final class PostManager {
     
     public private(set) var index: Int = 0
     
+    public private(set) var title: String = ""
+    public private(set) var nickname: String? = "닉네임2"
+    public private(set) var duty: String? = "iOS개발자"
+    public private(set) var content: String = ""
+    public private(set) var tagName: String = ""
+    public private(set) var views: Int = 0
+    public private(set) var likes: Int = 0
+    
     // MARK: - Set
     
     public func setIndex(to index: Int) {
@@ -48,4 +57,40 @@ final class PostManager {
         contents.append(Content(title, "닉네임", "IT 엔지니어", "8분 전", content, [category, "직무톡"], []))
     }
 
+}
+
+// MARK: - Server
+extension PostManager {
+    // Get /post/{id}
+    func fetchPost(id: Int, completion: @escaping ((Post?, Error?) -> ())) {
+        authProvider.request(.post(id)) { [weak self] response in
+            switch response {
+            case .success(let result):
+                do {
+                    self?.postModel = try result.map(PostReponse.self)
+                    
+                    guard let data = self?.postModel?.data?.exist else {
+                        print("data is invalid")
+                        return }
+                    
+                    self?.title = data.subject
+                    self?.nickname = data.nickname
+                    self?.duty = data.duty
+                    self?.content = data.contents
+                    self?.tagName = data.tagName
+                    self?.views = data.commentCnt
+                    self?.likes = data.likeCnt
+
+                    completion(data, nil)
+                    
+                } catch(let err) {
+                    print(err.localizedDescription)
+                    completion(nil, err)
+                }
+            case .failure(let err):
+                print(err.localizedDescription)
+                completion(nil, err)
+            }
+        }
+    }
 }
