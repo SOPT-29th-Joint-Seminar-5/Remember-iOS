@@ -142,8 +142,17 @@ final class CreatePostVC: BaseViewController {
               let category = categoryButton.titleLabel?.text
         else { return }
         
-        manager.createPost(title: title, content: content, category: category)
-        dismiss(animated: true, completion: nil)
+        manager.dispatchPost(tag: category, title: title, content: content) { [weak self] status, message in
+            guard let self = self else { return }
+            
+            switch status {
+            case 200:
+                print(message)
+                self.dismiss(animated: true, completion: nil)
+            default:
+                print(message)
+            }
+        }
     }
  
     @IBAction func didTappedImage(_ sender: Any) {
@@ -174,19 +183,19 @@ final class CreatePostVC: BaseViewController {
             self.setCategoryButtonContentInsets(0.48)
             self.categoryButton.setTitle("IT 기획/개발/디자인", for: .normal)
         })
-        let itEngineer = UIAlertAction(title: "IT 엔지니어", style: .default, handler: { [unowned self] _ in
-            self.setCategoryButtonContentInsets(0.62)
-            self.categoryButton.setTitle("IT 엔지니어", for: .normal)
+        let designer = UIAlertAction(title: "디자이너", style: .default, handler: { [unowned self] _ in
+            self.setCategoryButtonContentInsets(0.67)
+            self.categoryButton.setTitle("디자이너", for: .normal)
         })
-        let AIType = UIAlertAction(title: "인공지능/빅데이터", style: .default, handler: { [unowned self] _ in
-            self.setCategoryButtonContentInsets(0.50)
-            self.categoryButton.setTitle("인공지능/빅데이터", for: .normal)
+        let companyLife = UIAlertAction(title: "회사생활", style: .default, handler: { [unowned self] _ in
+            self.setCategoryButtonContentInsets(0.67)
+            self.categoryButton.setTitle("회사생활", for: .normal)
         })
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         alert.addAction(itBussinessType)
-        alert.addAction(itEngineer)
-        alert.addAction(AIType)
+        alert.addAction(designer)
+        alert.addAction(companyLife)
         alert.addAction(cancel)
         
         self.present(alert, animated: true, completion: nil)

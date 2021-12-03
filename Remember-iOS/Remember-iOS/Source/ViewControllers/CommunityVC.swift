@@ -38,11 +38,11 @@ class CommunityVC: BaseViewController {
         setupCV()
         setupNavigation()
         fetchCategoryData()
-        fetchListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setupTabbar()
+        fetchListData()
     }
     
     // MARK: - Custom Method Part
@@ -78,7 +78,6 @@ class CommunityVC: BaseViewController {
                 do {
                     self?.categoryData = try result.map(CategoryResponseData.self)
                     self?.categoryList = self?.categoryData?.data?.tagList ?? []
-                    print("categoryList", self?.categoryList)
                     self?.categoryCollectionView.reloadData()
                     
                     let url = URL(string: self?.categoryData?.data?.image ?? "")
@@ -104,7 +103,6 @@ class CommunityVC: BaseViewController {
                 do {
                     self?.listData = try result.map(MainListResponseData.self)
                     self?.contentList = self?.listData?.data?.mainList ?? []
-                    print("categoryList", self?.categoryList)
                     self?.communityTableView.reloadData()
                 } catch(let err) {
                     print(err.localizedDescription)
@@ -125,8 +123,7 @@ extension CommunityVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailPostVC.className) as? DetailPostVC else { return }
-        vc.index = indexPath.row
-        manager.setIndex(to: indexPath.row)
+        vc.id = contentList[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -138,7 +135,7 @@ extension CommunityVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CommunityTVC.className) as? CommunityTVC else { return UITableViewCell() }
-        
+        cell.selectionStyle = .none
         cell.setCommunityData(number: indexPath.row, data: contentList[indexPath.row])
         return cell
     }
