@@ -72,7 +72,7 @@ class CommunityVC: BaseViewController {
     }
     
     func fetchMainData() {
-        authProvider.request(.getCategoryData) { [weak self] response in
+        authProvider.request(.category) { [weak self] response in
             switch response {
             case .success(let result):
                 do {
@@ -98,7 +98,7 @@ class CommunityVC: BaseViewController {
     }
     
     func fetchListData() {
-        authProvider.request(.getMainData) { [weak self] response in
+        authProvider.request(.main) { [weak self] response in
             switch response {
             case .success(let result):
                 do {

@@ -10,8 +10,8 @@ import Foundation
 import Moya
 
 enum MainService {
-    case getCategoryData
-    case getMainData
+    case category
+    case main
 }
 
 extension MainService: TargetType {
@@ -21,16 +21,16 @@ extension MainService: TargetType {
     
     var path: String {
         switch self {
-        case .getCategoryData:
+        case .category:
             return "/main/tag"
-        case .getMainData:
+        case .main:
             return "/main"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getCategoryData, .getMainData:
+        case .category, .main:
             return .get
         }
     }
@@ -41,9 +41,7 @@ extension MainService: TargetType {
     
     var task: Task {
         switch self {
-        case .getCategoryData:
-            return .requestPlain
-        case .getMainData:
+        case .category, .main:
             return .requestPlain
         }
     }
