@@ -12,7 +12,7 @@ import Moya
 class CommunityVC: BaseViewController {
     private let authProvider = MoyaProvider<MainService>(plugins: [NetworkLoggerPlugin(verbose: true)])
     
-    var mainData: MainResponseData?
+    var categoryData: CategoryResponseData?
     var listData: MainListResponseData?
 
     // MARK: - UI Component Part
@@ -37,7 +37,7 @@ class CommunityVC: BaseViewController {
         setupTV()
         setupCV()
         setupNavigation()
-        fetchMainData()
+        fetchCategoryData()
         fetchListData()
     }
     
@@ -71,17 +71,17 @@ class CommunityVC: BaseViewController {
         tabbar.showTabbar()
     }
     
-    func fetchMainData() {
+    func fetchCategoryData() {
         authProvider.request(.category) { [weak self] response in
             switch response {
             case .success(let result):
                 do {
-                    self?.mainData = try result.map(MainResponseData.self)
-                    self?.categoryList = self?.mainData?.data?.tagList ?? []
+                    self?.categoryData = try result.map(CategoryResponseData.self)
+                    self?.categoryList = self?.categoryData?.data?.tagList ?? []
                     print("categoryList", self?.categoryList)
                     self?.categoryCollectionView.reloadData()
                     
-                    let url = URL(string: self?.mainData?.data?.image ?? "")
+                    let url = URL(string: self?.categoryData?.data?.image ?? "")
                     
                     DispatchQueue.global().async {
                         let data = try? Data(contentsOf: url!)
